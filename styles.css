@@ -1,0 +1,39 @@
+.jumbotron{
+    background-color: grey;
+}
+
+.jumbotron h1, p {
+    color: ghostwhite
+}
+
+.btn-primary {
+    text-align: center;
+}
+
+.languages {
+    padding-top: 20px;
+}
+.dataStructures {
+    padding-top: 20px;
+}
+
+.algorithms {
+    padding-top: 20px;
+}
+.code-content {
+    padding-top: 20px;
+}
+
+#madeBy {
+    font-size: 16px;
+}
+
+#name {
+    color: ghostwhite;
+    transition: color 0.3s ease-in-out
+    
+}
+#name:hover {
+    text-decoration: none;
+    color: lightcoral;
+}
