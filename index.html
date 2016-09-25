@@ -3,92 +3,121 @@
     
     <head>
        
+    <!--jQuery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+   
     <!--Bootstrap-->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel ="stylesheet" href = "styles.css">
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+           
     <!--Prism.js--> 
     <!--Hilighting code syntax and numbering snippet lines-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-abap.min.js"></script>
+       
+    <!--main.js-->
+        <script src="main.js"></script>
 
-    <!--jQuery-->       
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
              
         <title>BB4</title>
         
     </head>
     
     <body link = "white">
-       
-       <div class="jumbotron text-center">
+      
+       <div class="top-content text-center">
           <h1>Beat the Big 4</h1>
           <p>An interactive guide to common tech interview topics.</p>
-           <p id="madeBy">Made with  ❤️   and lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a></p>
+           <p id="madeBy">Started with  ❤️   and lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a></p>
         </div>
         
         <div class="container">
           
 <!--instead of "#" put a jQuery selector to change the code/page appropriately-->
-            <div class = "topContent text-center">
-                    <button class="btn btn-primary btn-lg" id="dataStructuresBtn">Data Structures</button>
-                    <button class="btn btn-primary btn-lg" id="algorithmsBtn">Algorithms</button> 
-            </div>
          
             <div class = "languages text-center">
                  
-                <button class="btn btn-primary btn-lg" id="java">Java</button>
-                <button class="btn btn-primary btn-lg" id="python">Python</button> 
-                <button class="btn btn-primary btn-lg" id="javascript">JavaScript</button> 
-                <button class="btn btn-primary btn-lg" id="c#">C#</button> 
-                <button class="btn btn-primary btn-lg" id="c++">C++</button>
-                <button class="btn btn-primary btn-lg" id="perl">Perl</button>
-                <button class="btn btn-primary btn-lg" id="ruby">Ruby</button>
-                <button class="btn btn-primary btn-lg" id="swift">Swift</button> 
+                <p id = languages-label>Languages</p>
+                
+                <ul class="nav nav-pills">
+                  
+                <!--class="active"-->
+                  <li><a href="#tab_a" data-toggle="pill", id= "java">Java</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "python">Python</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "javascript">JavaScript</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "c#">C#</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "c++">C++</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "perl">Perl</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "ruby">Ruby</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "swift">Swift</a></li>
+                </ul>
  
              </div>
              
-             <div class = "dataStructures text-center">
-                 
-                <button class="btn btn-primary btn-lg" id="array">Array</button>
-                <button class="btn btn-primary btn-lg" id="linkedList">Linked List</button> 
-                <button class="btn btn-primary btn-lg" id="stack">Stack</button> 
-                <button class="btn btn-primary btn-lg" id="queue">Queue</button> 
-                <button class="btn btn-primary btn-lg" id="tree">Tree</button>
-                <button class="btn btn-primary btn-lg" id="graph">Graph</button>
-                <button class="btn btn-primary btn-lg" id="hashmap">Hashmap</button> 
-            
-             </div>
-             
-            
-            <div class = "algorithms text-center">
-                 
-                <!--Searching-->
-                <button class="btn btn-primary btn-lg" id="breadth-first-search">Breadth First Search</button>
-                <button class="btn btn-primary btn-lg" id="depth-first-search">Depth First Search</button> 
-                <button class="btn btn-primary btn-lg" id="linear-search">Linear Search</button> 
-                <button class="btn btn-primary btn-lg" id="binary-search">Binary Search</button> 
+            <div class = "selection-content text-center">
                 
-                <!--Sorting-->
-                <button class="btn btn-primary btn-lg" id="heap-sort">Heap Sort</button>
-                <button class="btn btn-primary btn-lg" id="insertion-sort">Insertion Sort</button>
-                <button class="btn btn-primary btn-lg" id="merge-sort">Merge Sort</button>
-                <button class="btn btn-primary btn-lg" id="quick-sort">Quick Sort</button> 
-                <button class="btn btn-primary btn-lg" id="selection-sort">Selection Sort</button>
-                <button class="btn btn-primary btn-lg" id="bubble-sort">Bubble Sort</button> 
+                 <ul class="nav nav-pills">
+                  
+                  <li><a href="#tab_a" data-toggle="pill", id= "dataStructuresBtn">Data Structures</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "algorithmsBtn">Algorithms</a></li>
+                
+                </ul>
+                 
+            </div>
+            
+             <div class = "data-structures text-center">
+                 
+                <ul class="nav nav-pills">
+                  
+                  <li><a href="#tab_a" data-toggle="pill", id= "array">Array</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "linkedlist">Linked List</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "stack">Stack</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "queue">Queue</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "tree">Tree</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "graph">Graph</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "hashmap">Hashmap</a></li>
+                
+                </ul>
             
              </div>
+            
+            <div class = "algorithms">
+                                    
+                    <ul class="nav nav-pills">
+                  
+                      <li><a href="#tab_a" data-toggle="pill", id= "breadth-first-search">Breadth First Search</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "depth-first-search">Depth First Search</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "linear-search">Linear Search</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "binary-search">Binary Search</a></li>
+                    
+                      <li><a href="#tab_a" data-toggle="pill", id= "heap-sort">Heap Sort</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "insertion-sort">Insertion Sort</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "merge-sort">Merge Sort</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "quick-sort">Quick Sort</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "selection-sort">Selection Sort</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "bubble-sort">Bubble Sort</a></li>
+                      
+                    </ul>
+
+                 </div>
+             
+             </div>
+            
              
              <div class = "code-content">
+                
                 <pre>
                     <!--jquery will change chosen language class to specified class via buttons-->
-                    <code class = "chosen-language">
-                        Press on a data structure or algorithm to see the magic happen.
+                    <code class = "chosen-language text-center">
+                        <p>Press on a data structure or algorithm to see the magic happen.</p>
                     </code>
                     
                 </pre>
                  
              </div>
+             
+             
           
         </div>
         

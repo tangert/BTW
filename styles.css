@@ -1,27 +1,69 @@
-.jumbotron{
-    background-color: grey;
+* {
+    background-color: black;
 }
 
-.jumbotron h1, p {
+.selection-content h1, p {
+    
     color: ghostwhite
 }
 
-.btn-primary {
-    text-align: center;
+.btn {
+    border-radius: 30px;
 }
 
-.languages {
-    padding-top: 20px;
-}
-.dataStructures {
+.languages, .data-structures, .algorithms, .code-content {
+    justify-content: center;
     padding-top: 20px;
 }
 
-.algorithms {
-    padding-top: 20px;
-}
 .code-content {
-    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.nav-pills {
+    display: inline-block;
+    justify-content: center;
+    
+}
+.nav-pills>li {
+    
+    margin-top: 20px;
+    margin-right: 16px;
+    margin-left: 16px;
+    
+}
+
+.nav-pills>li>a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-spacing: inherit; 
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 20px;
+    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s linear;
+
+}
+
+.nav-pills>li>a:hover{
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgba(255,255,255,0.1);   
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus {
+    color:dimgray;
+    background-color: white;
+}
+
+#languages-label {
+    color: white;
+    font-size: 16px;
 }
 
 #madeBy {
@@ -33,6 +75,7 @@
     transition: color 0.3s ease-in-out
     
 }
+
 #name:hover {
     text-decoration: none;
     color: lightcoral;
