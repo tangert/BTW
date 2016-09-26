@@ -1,5 +1,5 @@
-* {
-    background-color: black;
+body {
+    background-color: dimgray;
 }
 
 .top-content h1, p {
@@ -78,4 +78,8 @@
 #name:hover {
     text-decoration: none;
     color: lightcoral;
+}
+
+#default-code-desc {
+    color: dimgray;
 }
