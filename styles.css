@@ -1,5 +1,10 @@
 body {
-    background-color: dimgray;
+    background-color: #2e2e2e;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.top-content {
+    opacity: 0.35;
 }
 
 .top-content h1, p {
@@ -10,8 +15,12 @@ body {
     border-radius: 30px;
 }
 
+.selection-content {
+    padding-top: 40px;
+}
+
+
 .languages, .data-structures, .algorithms, .code-content {
-    justify-content: center;
     padding-top: 20px;
 }
 
@@ -20,18 +29,21 @@ body {
     padding-right: 10px;
 }
 
-
 .nav-pills {
     display: inline-block;
-    justify-content: center;
+    text-align: center;
     
 }
 .nav-pills>li {
-    
-    margin-top: 20px;
-    margin-right: 16px;
-    margin-left: 16px;
-    
+    margin-top: 10px;
+    display: inline-block;
+    float: none;
+}
+
+/*.nav li a > span { display:block; }*/
+
+.nav-pills>li>a>span {
+    displa: inline-block;
 }
 
 .nav-pills>li>a {
@@ -50,7 +62,7 @@ body {
 
 .nav-pills>li>a:hover{
     transition: background-color 0.3s ease-in-out;
-    background-color: rgba(255,255,255,0.1);   
+    background-color: rgba(255,255,255,0.25);   
 }
 
 .nav-pills>li.active>a,
@@ -66,7 +78,7 @@ body {
 }
 
 #madeBy {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 #name {

@@ -15,21 +15,23 @@
     <!--Prism.js--> 
     <!--Hilighting code syntax and numbering snippet lines-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-abap.min.js"></script>
-       
+
     <!--main.js-->
         <script src="main.js"></script>
 
+    <!--custom fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
              
         <title>BB4</title>
         
     </head>
     
-    <body link = "white">
+    <body>
       
        <div class="top-content text-center">
           <h1>Beat the Big 4</h1>
           <p>An interactive guide to common tech interview topics.</p>
-           <p id="madeBy">Started with  ❤️   and lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a></p>
+           <p id="madeBy">Made with  ❤️   and lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a></p>
         </div>
         
         <div class="container">
@@ -38,25 +40,30 @@
          
             <div class = "languages text-center">
                  
-                <p id = languages-label>Languages</p>
+                <p id = languages-label>Choose a language</p>
                 
-                <ul class="nav nav-pills">
-                  
-                <!--class="active"-->
-                  <li><a href="#tab_a" data-toggle="pill", id= "java">Java</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "python">Python</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "javascript">JavaScript</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "c#">C#</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "c++">C++</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "perl">Perl</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "ruby">Ruby</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "swift">Swift</a></li>
-                </ul>
+                <div id = languages>
+                    <ul class="nav nav-pills">
+
+                    <!--class="active"-->
+                      <li><a href="#tab_a" data-toggle="pill", id= "java">Java</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "python">Python</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "javascript">JavaScript</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "c#">C#</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "c++">C++</a></li>
+                      <li><a href="#tab_a" data-toggle="pill", id= "swift">Swift</a></li>
+                    </ul>
+                </div>
+                                                    
  
              </div>
              
             <div class = "selection-content text-center">
                 
+                <div id = "languageSelectionWarning">
+                    <p>Please select a language first.</p>
+                </div>
+
                  <ul class="nav nav-pills">
                   
                   <li><a href="#tab_a" data-toggle="pill", id= "dataStructuresBtn">Data Structures</a></li>
@@ -68,48 +75,64 @@
             
              <div class = "data-structures text-center">
                  
+                <p>Choose a data structure</p>
+                 
                 <ul class="nav nav-pills">
                   
-                  <li><a href="#tab_a" data-toggle="pill", id= "array">Array</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "linkedlist">Linked List</a></li>
+                  <li><a href="#tab_a" data-toggle="pill", id= "linkedlist">LinkedList</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "stack">Stack</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "queue">Queue</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "tree">Tree</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "graph">Graph</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "hashmap">Hashmap</a></li>
-                
-                </ul>
-            
+                  <li><a href="#tab_a" data-toggle="pill", id= "dictionary">Dictionary</a></li>
+                   
              </div>
+             
+
             
             <div class = "algorithms text-center">
-                                    
-                    <ul class="nav nav-pills">
-                  
-                      <li><a href="#tab_a" data-toggle="pill", id= "breadth-first-search">Breadth First Search</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "depth-first-search">Depth First Search</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "linear-search">Linear Search</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "binary-search">Binary Search</a></li>
                     
-                      <li><a href="#tab_a" data-toggle="pill", id= "heap-sort">Heap Sort</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "insertion-sort">Insertion Sort</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "merge-sort">Merge Sort</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "quick-sort">Quick Sort</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "selection-sort">Selection Sort</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "bubble-sort">Bubble Sort</a></li>
+                    <p>Choose an algorithm</p>
+                    
+                    <!--nest in columns here to have proper searching/sorting separation-->
+            <div class="row">
+                <div class="col-md-12" id="wrapper">                           
+                    <ul class="nav nav-pills">
+                    
+                    <!--Searching-->
+                      <li><a href="#" data-toggle="pill", id= "breadth-first-search">Breadth First Search</a></li>
+                      <li><a href="#" data-toggle="pill", id= "depth-first-search">Depth First Search</a></li>
+                      <li><a href="#" data-toggle="pill", id= "linear-search">Linear Search</a></li>
+                      <li><a href="#" data-toggle="pill", id= "binary-search">Binary Search</a></li>
                       
+                        <br></br>
+                      
+                    <!--Sorting-->
+                      <li><a href="#" data-toggle="pill", id= "heap-sort">Heap Sort</a></li>
+                      <li><a href="#" data-toggle="pill", id= "insertion-sort">Insertion Sort</a></li>
+                      <li><a href="#" data-toggle="pill", id= "merge-sort">Merge Sort</a></li>
+                      <li><a href="#" data-toggle="pill", id= "quick-sort">Quick Sort</a></li>
+                      <li><a href="#" data-toggle="pill", id= "selection-sort">Selection Sort</a></li>
+                      <li><a href="#" data-toggle="pill", id= "bubble-sort">Bubble Sort</a></li>
+                    
                     </ul>
-
+                    
+                    
+                    </div>
+                </div>
             </div>
-             
-             </div>
-            
+                    
+
+                    
+
+        </div> 
+                        
              
              <div class = "code-content">
                 
                 <pre>
                     <!--jquery will change chosen language class to specified class via buttons-->
-                    <code class = "chosen-language text-center">
+                    <code class = "text-center" id = "chosen-language">
                         <p id = "default-code-desc">Press on a data structure or algorithm to see the magic happen.</p>
                     </code>
                     
