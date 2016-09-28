@@ -11,18 +11,18 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel ="stylesheet" href = "styles.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-           
-    <!--Prism.js--> 
-    <!--Hilighting code syntax and numbering snippet lines-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-abap.min.js"></script>
-
+    
+    <!--Highlight.js-->
+        <link rel="stylesheet" href="styles/default.css">
+        <script src="highlight.pack.js"></script>
+        
     <!--main.js-->
         <script src="main.js"></script>
 
     <!--custom fonts-->
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
              
-        <title>BB4</title>
+        <title>Beat the Big 4</title>
         
     </head>
     
@@ -73,6 +73,12 @@
                  
             </div>
             
+            <div class = "quick-facts text-center">
+            
+                
+            
+            </div>
+            
              <div class = "data-structures text-center">
                  
                 <p>Choose a data structure</p>
@@ -120,20 +126,15 @@
                     
                     </div>
                 </div>
-            </div>
-                    
-
-                    
+            </div>  
 
         </div> 
                         
-             
              <div class = "code-content">
                 
                 <pre>
                     <!--jquery will change chosen language class to specified class via buttons-->
-                    <code class = "text-center" id = "chosen-language">
-                        <p id = "default-code-desc">Press on a data structure or algorithm to see the magic happen.</p>
+                    <code class = "" id = "code-language">
                     </code>
                     
                 </pre>
