@@ -80,7 +80,6 @@ $(document).ready(function(){
     
     selectDataStructure();
     
-    
     var selectAlgorithm = $("#algorithms li a").click(function(){
         
         event.preventDefault();

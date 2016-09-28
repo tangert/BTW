@@ -74,7 +74,7 @@ body {
 
 .nav-pills>li.active>a {
     transition: border-radius 0.3s ease-in-out;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
 }
 
