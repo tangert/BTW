@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-       
-    <!--jQuery-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-   
+    <head>
+
+        <title>Beat the Big 4</title>
+    
+    <!--React.js-->
+        <script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+
+    <!--jQuery-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
     <!--Bootstrap-->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel ="stylesheet" href = "styles.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-    <!--Highlight.js-->
-        <link rel="stylesheet" href="styles/default.css">
-        <script src="highlight.pack.js"></script>
-        
-    <!--main.js-->
-        <script src="main.js"></script>
 
     <!--custom fonts-->
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
-             
-        <title>Beat the Big 4</title>
-        
+
+        <script src="main.js"></script>
+        <link rel ="stylesheet" href = "styles.css">
+
     </head>
-    
+
     <body>
-      
+
        <div class="top-content text-center">
           <h1>Beat the Big 4</h1>
           <p>An interactive guide to common tech interview topics.</p>
            <p id="madeBy">Made with  ❤️   and lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a></p>
         </div>
-        
-        <div class="container">
-          
+
+
 <!--instead of "#" put a jQuery selector to change the code/page appropriately-->
-         
+
             <div class = "languages text-center">
-                 
+
                 <p id = languages-label>Choose a language</p>
-                
+
                 <div id = languages>
                     <ul class="nav nav-pills">
 
@@ -54,61 +52,62 @@
                       <li><a href="#tab_a" data-toggle="pill", id= "swift">Swift</a></li>
                     </ul>
                 </div>
-                                                    
- 
+
+
              </div>
-             
+
             <div class = "selection-content text-center">
 
                  <ul class="nav nav-pills">
-                  
+
                   <li><a href="#tab_a" data-toggle="pill", id= "dataStructuresBtn">Data Structures</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "algorithmsBtn">Algorithms</a></li>
-                
+
                 </ul>
-                 
+
             </div>
-            
+
             <div class = "quick-facts text-center">
-            
-                
-            
+
+
+
             </div>
-            
+
              <div class = "data-structures text-center">
-                 
+
                 <p>Choose a data structure</p>
-                 
+
                 <ul class="nav nav-pills">
-                  
+
                   <li><a href="#tab_a" data-toggle="pill", id= "linkedlist">LinkedList</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "stack">Stack</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "queue">Queue</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "tree">Tree</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "graph">Graph</a></li>
                   <li><a href="#tab_a" data-toggle="pill", id= "dictionary">Dictionary</a></li>
-                   
-             </div>
-             
+                 </ul>
 
-            
+             </div>
+
+
+
             <div class = "algorithms text-center">
-                    
+
                     <p>Choose an algorithm</p>
-                    
+
                     <!--nest in columns here to have proper searching/sorting separation-->
             <div class="row">
-                <div class="col-md-12" id="wrapper">                           
+                <div class="col-md-12" id="wrapper">
                     <ul class="nav nav-pills">
-                    
+
                     <!--Searching-->
                       <li><a href="#" data-toggle="pill", id= "breadth-first-search">Breadth First Search</a></li>
                       <li><a href="#" data-toggle="pill", id= "depth-first-search">Depth First Search</a></li>
                       <li><a href="#" data-toggle="pill", id= "linear-search">Linear Search</a></li>
                       <li><a href="#" data-toggle="pill", id= "binary-search">Binary Search</a></li>
-                      
+
                         <br></br>
-                      
+
                     <!--Sorting-->
                       <li><a href="#" data-toggle="pill", id= "heap-sort">Heap Sort</a></li>
                       <li><a href="#" data-toggle="pill", id= "insertion-sort">Insertion Sort</a></li>
@@ -116,31 +115,26 @@
                       <li><a href="#" data-toggle="pill", id= "quick-sort">Quick Sort</a></li>
                       <li><a href="#" data-toggle="pill", id= "selection-sort">Selection Sort</a></li>
                       <li><a href="#" data-toggle="pill", id= "bubble-sort">Bubble Sort</a></li>
-                    
+
                     </ul>
-                    
-                    
+
+
                     </div>
                 </div>
-            </div>  
+            </div>
 
-        </div> 
-                        
+
              <div class = "code-content">
-                
-                                                        <script src="https://gist.github.com/tangert/8dad2b48c5c3c8500778333eb1c4ae58.js"></script>
+                 <script src="https://gist.github.com/tangert/8dad2b48c5c3c8500778333eb1c4ae58.js"></script>
 
-                 
              </div>
-             
-             
-          
+
         </div>
-        
-        
-        
+
+
+
     </body>
-    
-    
-    
+
+
+
 </html>
