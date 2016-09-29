@@ -1,7 +1,14 @@
+/*general*/
+
 body {
     background-color: #2e2e2e;
     font-family: 'Ubuntu Mono', monospace;
 }
+
+p {
+    color: white;
+}
+
 
 /* stuff on top */
 .top-content {
@@ -17,7 +24,7 @@ body {
 }
 
 #name {
-    color: ghostwhite;
+    color: lightcyan;
     transition: color 0.3s ease-in-out
 
 }
@@ -34,7 +41,6 @@ body {
     border-radius: 30px;
 }
 
-
 #languages-label {
     color: white;
     font-size: 16px;
@@ -45,13 +51,26 @@ body {
 }
 
 
-.languages, .data-structures, .algorithms, .code-content {
+.languages, .data-structures, .algorithms, .code-wrapper {
     padding-top: 20px;
 }
 
-.code-content {
+.code-wrapper {
     padding-left: 10px;
     padding-right: 10px;
+    color: white;
+}
+
+#code-desc {
+    opacity: 0.5;
+}
+
+.quick-facts {
+    padding-top: 20px;
+}
+#quick-facts-desc {
+    color: lightcyan;
+    opacity: 0.5;
 }
 
 /*nav bar customization*/

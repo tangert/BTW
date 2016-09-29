@@ -31,17 +31,42 @@ $(document).ready(function(){
         //fire the data structure click function with the updated language. 
         //fire the algorithm click function with the updated language. 
         
-        
+        if (currentLanguage !== chosenLanguage) {
+            
+            
+        }
     });
     
+    
+    var clickDataStructure = $(".data-structures li a").click(function(){        
         
-    $(".data-structures li a").click(function(){
-        
-        event.preventDefault();
-        
-        //$('.code-content').html();
-        
-        
+        if (this.id == "graph") {
+            
+            $.ajax({
+                url : "data-structures/java/graph.txt",
+                dataType: "text",
+                success : function (data) {
+                    $(".code-content").hide().html(data).fadeIn();
+                }
+            });
+
+            var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+            $("#code-desc").load(descriptionPath + this.id).hide().fadeIn(); 
+            
+        } else {
+            
+            $.ajax({
+                url : "data-structures/java/tree.txt",
+                dataType: "text",
+                success : function (data) {
+                    $(".code-content").hide().html(data).fadeIn();
+                }
+            });
+            
+            
+        }
+
+    
 //        if (currentLanguage == "java") {
 //            
 //            chosenLanguage = "java";
@@ -62,37 +87,6 @@ $(document).ready(function(){
         
     });
     
-    var $gists = $ajax_container.find('script[src^="https://gist.github.com/"]');
-
-        // if gist embeds are found
-        if( $gists.length ){
-
-            // update each gist
-            $gists.each(function(){
-
-                // we need to store $this for the callback
-                var $this = $(this);
-
-                // load gist as json instead with a jsonp request
-                $.getJSON( $this.attr('src') + 'on?callback=?', function( data ) {
-
-                    // replace script with gist html
-                    $this.replaceWith( $( data.div ) );
-
-                    // load the stylesheet, but only once…
-                    add_stylesheet_once( 'https://gist.github.com/' + data.stylesheet )
-
-                });
-
-            });
-
-    }
-    
-    function add_stylesheet_once( url ){
-        $head = $('head');
-        if( $head.find('link[rel="stylesheet"][href="'+url+'"]').length < 1 )
-            $head.append('<link rel="stylesheet" href="'+ url +'" type="text/css" />');
-    }
     
 //    $("#algorithms li a").click(function(){
 //        
@@ -124,12 +118,5 @@ $(document).ready(function(){
 //        //add cases for each language, then direct function to appropriate data structure and language. 
 //        
 //    });
-//    
-//    function loadLanguageToAlgorithm(var language, var algorithm) {
-//            
-//            return 
-//            
-//
-//        }
         
 });
