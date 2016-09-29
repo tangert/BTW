@@ -14,4 +14,7 @@ Everythign else is vanilla JS and HTML/CSS.
 Enjoy and visit bb4.io to see it in action!
 
 FORK AND CONTRIBUTE TO MAKE EVERYONE'S LIVES EASIER
+<<<<<<< HEAD
 
+=======
+>>>>>>> 331de904092210fc91e9215bb4285f6ad4262e9b
