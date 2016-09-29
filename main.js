@@ -1,28 +1,49 @@
 $(function(){
     $(".data-structures").hide();
     $(".algorithms").hide();
+    $(".code-wrapper").hide();
+    $(".selection-content").hide();
+    
 });
 
 $(document).ready(function(){
     
-    var currentLanguage;
-    var chosenLanguage; 
+    //some variable initialization 
+    var currentLanguage, 
+        currentDataStructure,
+        currentAlgorithm = ""; 
 
+    var languageIsSelected,
+        dataStructureIsSelected,
+        algorithmIsSelected= false;
+    
+    //functions
     $("#dataStructuresBtn").click(function(){
-        $(".data-structures").fadeIn();
-        $(".algorithms").hide();
+        
+        if(languageIsSelected) {
+            $(".data-structures").fadeIn();
+            $(".algorithms").hide();
+        }
 
     });
     
     $("#algorithmsBtn").click(function(){
-        $(".algorithms").fadeIn();
-        $(".data-structures").hide();
+        
+        if(languageIsSelected) {
+            $(".algorithms").fadeIn();
+            $(".data-structures").hide();
+        }
+
     });
     
     
     $("#languages li a").click(function(){
   
-        event.preventDefault();
+        languageIsSelected = true; 
+        
+        $(".selection-content").fadeIn();
+        
+        //event.preventDefault();
         currentLanguage = this.id;
   
         //if a data structure or algorithm is selected
@@ -31,67 +52,138 @@ $(document).ready(function(){
         //fire the data structure click function with the updated language. 
         //fire the algorithm click function with the updated language. 
         
-        if (currentLanguage !== chosenLanguage) {
+        if (dataStructureIsSelected) {
             
-            
+            if (currentDataStructure == "graph") {
+                $("#graph").trigger("click");
+            }
         }
     });
     
-    
-    var clickDataStructure = $(".data-structures li a").click(function(){        
         
-        if (this.id == "graph") {
-            
-            $.ajax({
-                url : "data-structures/java/graph.txt",
-                dataType: "text",
-                success : function (data) {
-                    $(".code-content").hide().html(data).fadeIn();
-                }
-            });
+        $(".data-structures li a").click(function(){        
 
-            var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
-            $("#code-desc").load(descriptionPath + this.id).hide().fadeIn(); 
+            dataStructureIsSelected = true;
+            algorithmIsSelected = false;
+
+            if (languageIsSelected && 
+                (algorithmIsSelected || dataStructureIsSelected)) {
+                $(".code-wrapper").fadeIn();
+
+            }
+
+            //switch statement for this.id
+            //add cases for each language, then direct function to appropriate data structure and language. 
+
+            //        if (currentLanguage == "java") {
+    //            
+    //            chosenLanguage = "java";
+    //            
+    //            switch(this.id) {
+    //                case "linkedlist":  
+    //                case "stack":
+    //                case "queue":
+    //                case "tree":
+    //                case "graph":
+    //                case "dictionary": 
+    //                default:
+    //        }
+    //        
+    //        }
+
             
-        } else {
+            //TESTING BETWEEN JAVA AND PYTHON.
             
-            $.ajax({
-                url : "data-structures/java/tree.txt",
-                dataType: "text",
-                success : function (data) {
-                    $(".code-content").hide().html(data).fadeIn();
+            
+            if(currentLanguage == "java") {
+
+                if (this.id == "graph") {
+                    
+                    currentDataStructure = "graph";
+
+                    $.ajax({
+                        url : "data-structures/java/graph.txt",
+                        dataType: "text",
+                        success : function (data) {
+                            $("#code-content").hide().html(data).fadeIn();
+
+                        }
+                    });
+
+                    var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+                    $("#code-desc").load(descriptionPath + this.id).hide().fadeIn(); 
+                    
+                    
+
+                } else {
+                    
+                    currentDataStructure = "tree";
+                    $.ajax({
+                        url : "data-structures/java/tree.txt",
+                        dataType: "text",
+                        success : function (data) {
+                            $("#code-content").hide().html(data).fadeIn();
+                        }
+                    });
+                    
+                    var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+                    $("#code-desc").load(descriptionPath + this.id).hide().fadeIn();
                 }
-            });
-            
-            
+
+            } else if (currentLanguage == "python") {
+
+                if (this.id == "graph") {
+                    
+                    currentDataStructure = "graph";
+
+                    $.ajax({
+                        url : "data-structures/python/graph.txt",
+                        dataType: "text",
+                        success : function (data) {
+                            $("#code-content").hide().html(data).fadeIn();
+
+                        }
+                    });
+
+                    var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+                    $("#code-desc").load(descriptionPath + this.id).hide().fadeIn(); 
+
+                } else {
+                    
+                    currentDataStructure = "tree";
+
+                    $.ajax({
+                        url : "data-structures/python/tree.txt",
+                        dataType: "text",
+                        success : function (data) {
+                            $("#code-content").hide().html(data).fadeIn();
+                        }
+                    });
+                    
+                    var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+                    $("#code-desc").load(descriptionPath + this.id).hide().fadeIn();
+                }
+            }
+
+
+        });
+    
+    
+    var clickAlgorithm = $(".algorithms li a").click(function(){
+        
+        algorithmIsSelected = true;
+        dataStructureIsSelected = false;
+
+        
+        if (languageIsSelected && 
+            (algorithmIsSelected || dataStructureIsSelected)) {
+
+            $(".code-wrapper").fadeIn();
+        
         }
-
-    
-//        if (currentLanguage == "java") {
-//            
-//            chosenLanguage = "java";
-//            
-//            switch(this.id) {
-//                case "linkedlist":  
-//                case "stack":
-//                case "queue":
-//                case "tree":
-//                case "graph":
-//                case "dictionary": 
-//                default:
-//        }
-//        
-//        }
         
-        //add cases for each language, then direct function to appropriate data structure and language. 
         
-    });
-    
-    
-//    $("#algorithms li a").click(function(){
-//        
-//        event.preventDefault();
-//        
+//                
 //        switch(currentLanguage) {
 //                
 //            case "java":
@@ -117,6 +209,7 @@ $(document).ready(function(){
 //        
 //        //add cases for each language, then direct function to appropriate data structure and language. 
 //        
-//    });
+    });
+    
         
 });

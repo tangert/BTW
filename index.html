@@ -11,19 +11,20 @@
     <!--Bootstrap-->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+        
     <!--custom fonts-->
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
 
-    <!--standard JS and CSS links-->
         <script src="main.js"></script>
         <link rel ="stylesheet" href = "styles.css">
+        <link rel ="stylesheet" href = "prism/prism.css">
+        <script src = "prism/prism.js"></script>
+
+
 
     </head>
 
-    <body>
-        <div id="placeholder"></div>
-      
+    <body>      
       
        <div class="top-content text-center">
           <h1>Beat the Big 4</h1>
@@ -120,49 +121,158 @@
         <!--CODE DISPLAY.-->
              <div class = "code-wrapper">
 
-
-                    <!--Quick facts about Big-O stuff.-->
-                    <div class = "quick-facts">
+                <!--Quick facts about Big-O stuff.-->
+                <div class = "quick-facts">
 <!--To be added later-->
 <!--
-                        <p id = "quick-facts-desc">Quick facts about chosen ds/alg</p>
+                    <p id = "quick-facts-desc">Quick facts about chosen ds/alg</p>
 
-                        <div class = "pagination" id = "algorithm-quickfacts">
-                            <li><a href = "#">Time Complexity</a></li>
-                            <li><a href = "#">Space Complexity</a></li>
-                        </div>
+                    <div class = "pagination" id = "algorithm-quickfacts">
+                        <li><a href = "#">Time Complexity</a></li>
+                        <li><a href = "#">Space Complexity</a></li>
+                    </div>
 
-                        <div class = "pagination" id = "data-structure-quickfacts">
-                        </div>
+                    <div class = "pagination" id = "data-structure-quickfacts">
+                    </div>
 -->
 
-                    </div>
+                </div>
 
-                   <div class = "row">
-                       
-                       <div class = "col-xs-8">
-                         <!--Actual code-->
-                           <pre>
-                               <code class = "code-content" id = "language">
+               <div class = "row">
 
-                               </code>
-                           </pre>
-                       </div>
-                       
-                       <div class = "col-xs-4">
-                       
-                          <p id = "code-desc">Description of code.</p>
-                           
-                       </div>
+                   <div class = "col-sm-8">
+                     <!--Actual code-->
+                      
+                       <pre class = "language-java">
+                           <code class = "language-java" id = "code-content">
 
+                               Click on a data strucuture or algorithm.
 
-                    </div>
-        
+                           </code>
+                       </pre>
+                   </div>
+
+                   <div class = "col-sm-4">
+
+                      <p id = "code-desc">Description of code.</p>
+
+                   </div>
+                </div>
             </div>
+            
+            
+        <script>     
+            
+        //Author: Prism.js
+            
+            (function() {
+            var form = $('form'), code = $('code', form),
+                languages = components.languages,
+                highlightCode = function() { Prism.highlightElement(code); };
 
-        </div>
+            for (var id in languages) {
+                if (id == 'meta') {
+                    continue;
+                }
+
+                var name = languages[id].title || languages[id];
+
+                $u.element.create('label', {
+                    attributes: {
+                        'data-id': id
+                    },
+                    contents: [
+                        {
+                            tag: 'input',
+                            properties: {
+                                type: 'radio',
+                                name: 'language',
+                                value: id,
+                                onclick: function () {
+                                    var lang = this.value;
+                                    code.className = 'language-' + lang;
+                                    code.textContent = code.textContent;
+
+                                    // loadLanguage() returns a promise, so we use highlightCode()
+                                    // as resolve callback. The promise will be immediately
+                                    // resolved if there is nothing to load.
+                                    loadLanguage(lang).then(highlightCode);
+                                }
+                            }
+                        }, name
+                    ],
+                    inside: '#language'
+                });
+            }
 
 
+            /**
+             * Loads a language, including all dependencies
+             *
+             * @param {string} lang the language to load
+             * @type {Promise} the promise which resolves as soon as everything is loaded
+             */
+            function loadLanguage (lang)
+            {
+                // at first we need to fetch all dependencies for the main language
+                // Note: we need to do this, even if the main language already is loaded (just to be sure..)
+                //
+                // We load an array of all dependencies and call recursively this function on each entry
+                //
+                // dependencies is now an (possibly empty) array of loading-promises
+                var dependencies = getDependenciesOfLanguage(lang).map(loadLanguage);
+
+                // We create a promise, which will resolve, as soon as all dependencies are loaded.
+                // They need to be fully loaded because the main language may extend them.
+                return Promise.all(dependencies)
+                    .then(function () {
+
+                        // If the main language itself isn't already loaded, load it now
+                        // and return the newly created promise (we chain the promises).
+                        // If the language is already loaded, just do nothing - the next .then()
+                        // will immediately be called
+                        if (!Prism.languages[lang]) {
+                            return new Promise(function (resolve) {
+                                $u.script('components/prism-' + lang + '.js', resolve);
+                            });
+                        }
+                    });
+            }
+
+
+            /**
+             * Returns all dependencies (as identifiers) of a specific language
+             *
+             * @param {string} lang
+             * @returns {Array.<string>} the list of dependencies. Empty if the language has none.
+             */
+            function getDependenciesOfLanguage (lang)
+            {
+                if (!components.languages[lang] || !components.languages[lang].require)
+                {
+                    return [];
+                }
+
+                return ($u.type(components.languages[lang].require) === "array")
+                    ? components.languages[lang].require
+                    : [components.languages[lang].require];
+            }
+
+
+            var radios = $$('input[name=language]');
+            radios[0].checked = true;
+            radios[0].onclick();
+
+            var textarea = $('textarea', form);
+
+            (textarea.oninput = function() {
+                code.textContent = this.value || '';
+                highlightCode();
+            }).call(textarea);
+
+            })();
+
+        </script>
 
     </body>
 

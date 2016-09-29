@@ -9,7 +9,6 @@ p {
     color: white;
 }
 
-
 /* stuff on top */
 .top-content {
     opacity: 0.35;
@@ -62,8 +61,20 @@ p {
 }
 
 #code-desc {
-    opacity: 0.5;
+    opacity: 0.85;
+    color: lightcyan;
 }
+
+pre, code {
+        white-space: pre-wrap;       /* CSS 3 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+        padding:0px;
+        margin:0px
+}
+
 
 .quick-facts {
     padding-top: 20px;
