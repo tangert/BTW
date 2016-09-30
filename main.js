@@ -1,7 +1,7 @@
 $(function(){
     $(".data-structures").hide();
     $(".algorithms").hide();
-    $(".code-wrapper").hide();
+    $(".content-wrapper").hide();
     $(".selection-content").hide();
     
 });
@@ -44,94 +44,161 @@ $(document).ready(function(){
 
         $(".selection-content").fadeIn();
           
-        if (dataStructureIsSelected) {
-            if (currentDataStructure == "graph") {
-                $("#graph").trigger("click");
+        //switch statement 
+        
+        if (dataStructureIsSelected) {            
+            switch(currentDataStructure){
+                case "linkedlist":
+                    $("#linkedlist").trigger("click");
+                    break;
+                case "stack":
+                    $("#stack").trigger("click");
+                    break;
+                case "queue":
+                    $("#queue").trigger("click");
+                    break;
+                case "tree":
+                    $("#tree").trigger("click");
+                    break;
+                case "graph":
+                    $("#graph").trigger("click");
+                    break;
+                case "dictionary":
+                    $("#dictionary").trigger("click");
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        if (algorithmIsSelected) {
+            switch(currentAlgorithm) {
+                case "breadth-first-search":
+                    $("#breadth-first-search").trigger("click");
+                    break;
+                case "depth-first-search":
+                    $("#depth-first-search").trigger("click");
+                    break;
+                case "linear-search":
+                    $("#linear-search").trigger("click");
+                    break;
+                case "binary-search":
+                    $("#binary-search").trigger("click");
+                    break;
+                case "heap-sort":
+                    $("#heap-sort").trigger("click");
+                    break;
+                case "insertion-sort":
+                    $("#insertion-sort").trigger("click");
+                    break;
+                case "merge-sort":
+                    $("#merge-sort").trigger("click");
+                    break;
+                case "quick-sort":
+                    $("#quick-sort").trigger("click");
+                    break;
+                case "selection-sort":
+                    $("#selection-sort").trigger("click");
+                    break;
+                case "bubble-sort":
+                    $("#bubble-sort").trigger("click");
+                    break;
+                default:
+                    break;
             }
         }
     });
     
         
-        $(".data-structures li a").click(function(){        
+    $(".data-structures li a").click(function(){        
 
-            dataStructureIsSelected = true;
-            algorithmIsSelected = false;
+        dataStructureIsSelected = true;
+        algorithmIsSelected = false;
 
-            if (languageIsSelected && dataStructureIsSelected) {
-                $(".code-wrapper").fadeIn();
+        if (languageIsSelected && dataStructureIsSelected) {
+            $(".content-wrapper").fadeIn();
 
-            }
-            
-            switch(currentLanguage) {
-                case "java":
-                    createDataStructureSwitch(this.id, "java");
+        }
+
+        switch(currentLanguage) {
+            case "java":
+                createDataStructureSwitch(this.id, "java");
+                break;
+            case "python":
+                createDataStructureSwitch(this.id, "python");
+                break;
+            case "javascript":
+                createDataStructureSwitch(this.id, "javascript");
+                break;
+            case "c#":
+                createDataStructureSwitch(this.id, "c#");
+                break;
+            case "c++":
+                createDataStructureSwitch(this.id, "c++");
+                break;
+            case "swift":
+                createDataStructureSwitch(this.id, "swift");
+                break;
+            default:
+                break;
+
+        }
+
+        //creates a switch statement to be executed for each language
+        function createDataStructureSwitch(sender, language) {
+
+            switch(sender){
+                case "linkedlist":
+                    updateCodeContent(sender, language, "linkedlist");
                     break;
-                case "python":
-                    createDataStructureSwitch(this.id, "python");
+                case "stack":
+                    updateCodeContent(sender, language, "stack");
                     break;
-                case "javascript":
-                    createDataStructureSwitch(this.id, "javascript");
+                case "queue":
+                    updateCodeContent(sender, language, "queue");
                     break;
-                case "c#":
-                    createDataStructureSwitch(this.id, "c#");
+                case "tree":
+                    updateCodeContent(sender, language, "tree");
                     break;
-                case "c++":
-                    createDataStructureSwitch(this.id, "c++");
+                case "graph":
+                    updateCodeContent(sender, language, "graph");
                     break;
-                case "swift":
-                    createDataStructureSwitch(this.id, "swift");
+                case "dictionary":
+                    updateCodeContent(sender, language, "dictionary");
                     break;
                 default:
-                    break;
+                    updateCodeContent(sender, "markup", "");
+            }
+        }
+
+        //updates the code content in DOM for each dat
+        function updateCodeContent(sender, language, dataStructure) {
+
+            currentDataStructure = dataStructure; 
+
+            $.ajax({
+                url : "data-structures/" + language + "/" + dataStructure + ".txt",
+                dataType: "text",
+                success : function (data) {
                     
-            }
-            
-            //creates a switch statement to be executed for each language
-            function createDataStructureSwitch(sender, language) {
-                
-                switch(sender){
-                        case "linkedlist":
-                            updateCodeContent(sender, language, "linkedlist");
-                            break;
-                        case "stack":
-                            updateCodeContent(sender, language, "stack");
-                            break;
-                        case "queue":
-                            updateCodeContent(sender, language, "queue");
-                            break;
-                        case "tree":
-                            updateCodeContent(sender, language, "tree");
-                            break;
-                        case "graph":
-                            updateCodeContent(sender, language, "graph");
-                            break;
-                        case "dictionary":
-                            updateCodeContent(sender, language, "dictionary");
-                            break;
-                        default:
-                            updateCodeContent(sender, "markup", "");
-                    }
-            }
-            
-            //updates the code content in DOM for each dat
-            function updateCodeContent(sender, language, dataStructure) {
-                
-                currentDataStructure = dataStructure; 
-                
-                $.ajax({
-                    url : "data-structures/" + language + "/" + dataStructure + ".txt",
-                    dataType: "text",
-                    success : function (data) {
-                        $("#code-content").hide().html(data).fadeIn();
+                    $("#snippet pre code").removeClass().addClass("hljs " + language);
+                    $("#snippet pre code").hide().html(data).fadeIn();
+                    highlightBlockInPage();
 
-                    }
-                });
+                }
+            });
 
-                var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
-                $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
-            }
+            var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
+            $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
+        }
+        
+        function highlightBlockInPage() {
+            // get the block and highlight it manually:
+            var snippet = document.querySelector('#snippet pre code');
+            hljs.highlightBlock(snippet);
+        }
 
-        });
+    });
     
     
     $(".algorithms li a").click(function(){
@@ -146,88 +213,95 @@ $(document).ready(function(){
 
             }
 
-                //switches content for each language selected
-                switch(currentLanguage) {
-                    case "java":
-                        createAlgorithmSwitch(this.id, "java");
-                        break;
-                    case "python":
-                        createAlgorithmSwitch(this.id, "python");
-                        break;
-                    case "javascript":
-                        createAlgorithmSwitch(this.id, "javascript");
-                        break;
-                    case "c#":
-                        createAlgorithmSwitch(this.id, "c#");
-                        break;
-                    case "c++":
-                        createAlgorithmSwitch(this.id, "c++");
-                        break;
-                    case "swift":
-                        createAlgorithmSwitch(this.id, "swift");
-                        break;
-                    default:
-                        break;
-                }
+            //switches content for each language selected
+            switch(currentLanguage) {
+                case "java":
+                    createAlgorithmSwitch(this.id, "java");
+                    break;
+                case "python":
+                    createAlgorithmSwitch(this.id, "python");
+                    break;
+                case "javascript":
+                    createAlgorithmSwitch(this.id, "javascript");
+                    break;
+                case "c#":
+                    createAlgorithmSwitch(this.id, "c#");
+                    break;
+                case "c++":
+                    createAlgorithmSwitch(this.id, "c++");
+                    break;
+                case "swift":
+                    createAlgorithmSwitch(this.id, "swift");
+                    break;
+                default:
+                    break;
+            }
 
                 
-            //creates a switch statement to be executed for each language
-                function createAlgorithmSwitch(sender, language) {
+        //creates a switch statement to be executed for each language
+            function createAlgorithmSwitch(sender, language) {
 
-                    switch(sender){
-                            case "breadth-first-search":
-                                updateCodeContent(sender, language, "breadth-first-search");
-                                break;
-                            case "depth-first-search":
-                                updateCodeContent(sender, language, "depth-first-search");
-                                break;
-                            case "linear-search":
-                                updateCodeContent(sender, language, "linear-search");
-                                break;
-                            case "binary-search":
-                                updateCodeContent(sender, language, "binary-search");
-                                break;
-                            case "heap-sort":
-                                updateCodeContent(sender, language, "heap-sort");
-                                break;
-                            case "insertion-sort":
-                                updateCodeContent(sender, language, "insertion-sort");
-                                break;
-                            case "merge-sort":
-                                updateCodeContent(sender, language, "merge-sort");
-                                break;
-                            case "quick-sort":
-                                updateCodeContent(sender, language, "quick-sort");
-                                break;
-                            case "selection-sort":
-                                updateCodeContent(sender, language, "selection-sort");
-                                break;
-                            case "bubble-sort":
-                                updateCodeContent(sender, language, "bubble-sort");
-                                break;
-                            default:
-                                updateCodeContent(sender, "markup", "");
-                        }
+                switch(sender){
+                    case "breadth-first-search":
+                        updateCodeContent(sender, language, "breadth-first-search");
+                        break;
+                    case "depth-first-search":
+                        updateCodeContent(sender, language, "depth-first-search");
+                        break;
+                    case "linear-search":
+                        updateCodeContent(sender, language, "linear-search");
+                        break;
+                    case "binary-search":
+                        updateCodeContent(sender, language, "binary-search");
+                        break;
+                    case "heap-sort":
+                        updateCodeContent(sender, language, "heap-sort");
+                        break;
+                    case "insertion-sort":
+                        updateCodeContent(sender, language, "insertion-sort");
+                        break;
+                    case "merge-sort":
+                        updateCodeContent(sender, language, "merge-sort");
+                        break;
+                    case "quick-sort":
+                        updateCodeContent(sender, language, "quick-sort");
+                        break;
+                    case "selection-sort":
+                        updateCodeContent(sender, language, "selection-sort");
+                        break;
+                    case "bubble-sort":
+                        updateCodeContent(sender, language, "bubble-sort");
+                        break;
+                    default:
+                        updateCodeContent(sender, "markup", "");
                 }
+            }
 
-                //updates the code content in DOM for each data structure switch. 
-                function updateCodeContent(sender, language, algorithm) {
+            //updates the code content in DOM for each data structure switch. 
+            function updateCodeContent(sender, language, algorithm) {
 
-                    currentAlgorithm = algorithm; 
+                currentAlgorithm = algorithm; 
 
-                    $.ajax({
-                        url : "algorithms/" + language + "/" + algorithm + ".txt",
-                        dataType: "text",
-                        success : function (data) {
-                            $("#code-content").hide().html(data).fadeIn();
+                $.ajax({
+                    url : "algorithms/" + language + "/" + algorithm + ".txt",
+                    dataType: "text",
+                    success : function (data) {
+                        $("#snippet pre code").removeClass().addClass("hljs " + language);
+                        $("#snippet pre code").hide().html(data).fadeIn();
+                        highlightBlockInPage();
 
-                        }
-                    });
+                    }
+                });
 
-                    var descriptionPath = "descriptions/algorithm-descriptions.html " + "#";
-                    $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
-                }
+                var descriptionPath = "descriptions/algorithm-descriptions.html " + "#";
+                $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
+            }
         
+            function highlightBlockInPage() {
+                // get the block and highlight it manually:
+                var snippet = document.querySelector('#snippet pre code');
+                hljs.highlightBlock(snippet);
+            }
     });
     
         

@@ -23,7 +23,7 @@ p {
 }
 
 #name {
-    color: lightcyan;
+    color: ghostwhite;
     transition: color 0.3s ease-in-out
 
 }
@@ -50,31 +50,31 @@ p {
 }
 
 
-.languages, .data-structures, .algorithms, .code-wrapper {
+.languages, .data-structures, .algorithms, .content-wrapper {
     padding-top: 20px;
 }
 
-.code-wrapper {
+.content-wrapper {
     padding-left: 10px;
     padding-right: 10px;
     color: white;
 }
 
+pre {
+    background-color: #2e2e2e;
+    border-color: #2e2e2e;
+    border-radius: 20px;
+}
+
+code {
+    border-radius: 20px;
+}
+
+
 #code-desc {
     opacity: 0.85;
     color: lightcyan;
 }
-
-pre, code {
-        white-space: pre-wrap;       /* CSS 3 */
-        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-        white-space: -pre-wrap;      /* Opera 4-6 */
-        white-space: -o-pre-wrap;    /* Opera 7 */
-        word-wrap: break-word;       /* Internet Explorer 5.5+ */
-        padding:0px;
-        margin:0px
-}
-
 
 .quick-facts {
     padding-top: 20px;
@@ -104,7 +104,7 @@ pre, code {
 
 .nav-pills>li.active>a {
     transition: border-radius 0.3s ease-in-out;
-    border-radius: 5px;
+    border-radius: 2px;
     transition: background-color 0.3s ease-in-out;
 }
 

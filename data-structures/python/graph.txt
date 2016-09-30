@@ -1,6 +1,4 @@
-
 from collections import defaultdict
-
 
 class Graph(object):
     """ Graph data structure, undirected by default. """

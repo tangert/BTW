@@ -6,7 +6,7 @@
         <title>Beat the Big 4</title>
 
     <!--jQuery-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         
     <!--Bootstrap-->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,13 +15,14 @@
     <!--custom fonts-->
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
 
+    <!--Highlight.js-->
+        <link rel="stylesheet" href="highlightjs/styles/school-book.css">
+        <script src="highlightjs/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
         <script src="main.js"></script>
         <link rel ="stylesheet" href = "styles.css">
-        <link rel ="stylesheet" href = "prism/prism.css">
-        <script src = "prism/prism.js"></script>
-
-
-
+        
     </head>
 
     <body>      
@@ -29,7 +30,7 @@
        <div class="top-content text-center">
           <h1>Beat the Big 4</h1>
           <p>An interactive glossary of tech interview topics.</p>
-           <p id="madeBy">Made with lots of googling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a> <i>so you don't have to</i></p>
+           <p id="madeBy">Made with lots of yelling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a> <i>so you don't have to.</i></p>
         </div>
 
 
@@ -43,12 +44,12 @@
                     <ul class="nav nav-pills">
 
                     <!--class="active"-->
-                      <li><a href="#tab_a" data-toggle="pill", id= "java">Java</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "python">Python</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "javascript">JavaScript</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "c#">C#</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "c++">C++</a></li>
-                      <li><a href="#tab_a" data-toggle="pill", id= "swift">Swift</a></li>
+                      <li><a href="#" data-toggle="pill", id= "java">Java</a></li>
+                      <li><a href="#" data-toggle="pill", id= "python">Python</a></li>
+                      <li><a href="#" data-toggle="pill", id= "javascript">JavaScript</a></li>
+                      <li><a href="#" data-toggle="pill", id= "c#">C#</a></li>
+                      <li><a href="#" data-toggle="pill", id= "c++">C++</a></li>
+                      <li><a href="#" data-toggle="pill", id= "swift">Swift</a></li>
                     </ul>
                 </div>
 
@@ -60,8 +61,8 @@
 
                  <ul class="nav nav-pills">
 
-                  <li><a href="#tab_a" data-toggle="pill", id= "dataStructuresBtn">Data Structures</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "algorithmsBtn">Algorithms</a></li>
+                  <li><a href="#" data-toggle="pill", id= "dataStructuresBtn">Data Structures</a></li>
+                  <li><a href="#" data-toggle="pill", id= "algorithmsBtn">Algorithms</a></li>
 
                 </ul>
 
@@ -74,12 +75,12 @@
 
                 <ul class="nav nav-pills">
 
-                  <li><a href="#tab_a" data-toggle="pill", id= "linkedlist">LinkedList</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "stack">Stack</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "queue">Queue</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "tree">Tree</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "graph">Graph</a></li>
-                  <li><a href="#tab_a" data-toggle="pill", id= "dictionary">Dictionary</a></li>
+                  <li><a href="#" data-toggle="pill", id= "linkedlist">LinkedList</a></li>
+                  <li><a href="#" data-toggle="pill", id= "stack">Stack</a></li>
+                  <li><a href="#" data-toggle="pill", id= "queue">Queue</a></li>
+                  <li><a href="#" data-toggle="pill", id= "tree">Tree</a></li>
+                  <li><a href="#" data-toggle="pill", id= "graph">Graph</a></li>
+                  <li><a href="#" data-toggle="pill", id= "dictionary">Dictionary</a></li>
                  </ul>
 
              </div>
@@ -119,10 +120,11 @@
             </div>
 
         <!--CODE DISPLAY.-->
-             <div class = "code-wrapper">
+             <div class = "content-wrapper">
 
                 <!--Quick facts about Big-O stuff.-->
                 <div class = "quick-facts">
+
 <!--To be added later-->
 <!--
                     <p id = "quick-facts-desc">Quick facts about chosen ds/alg</p>
@@ -153,132 +155,19 @@
                    
                    <div class = "col-sm-8 col-sm-pull-4">
                      <!--Actual code-->
-                      
-                       <pre class = "language-java">
-                           <code class = "language-java" id = "code-content">
+                        <div id = "snippet">
+                            <pre>
+                               <code class = "nohighlight" id = "code-content">
+                                   Click on a data strucuture or algorithm.
+                               </code>
+                           </pre>
 
-                               Click on a data strucuture or algorithm.
-
-                           </code>
-                       </pre>
+                        </div>
                    </div>
 
                 </div>
                 
             </div>
-            
-        <script>     
-            
-        //Author: Prism.js
-            
-            (function() {
-            var form = $('form'), code = $('code', form),
-                languages = components.languages,
-                highlightCode = function() { Prism.highlightElement(code); };
-
-            for (var id in languages) {
-                if (id == 'meta') {
-                    continue;
-                }
-
-                var name = languages[id].title || languages[id];
-
-                $u.element.create('label', {
-                    attributes: {
-                        'data-id': id
-                    },
-                    contents: [
-                        {
-                            tag: 'input',
-                            properties: {
-                                type: 'radio',
-                                name: 'language',
-                                value: id,
-                                onclick: function () {
-                                    var lang = this.value;
-                                    code.className = 'language-' + lang;
-                                    code.textContent = code.textContent;
-
-                                    // loadLanguage() returns a promise, so we use highlightCode()
-                                    // as resolve callback. The promise will be immediately
-                                    // resolved if there is nothing to load.
-                                    loadLanguage(lang).then(highlightCode);
-                                }
-                            }
-                        }, name
-                    ],
-                    inside: '#language'
-                });
-            }
-
-
-            /**
-             * Loads a language, including all dependencies
-             *
-             * @param {string} lang the language to load
-             * @type {Promise} the promise which resolves as soon as everything is loaded
-             */
-            function loadLanguage (lang)
-            {
-                // at first we need to fetch all dependencies for the main language
-                // Note: we need to do this, even if the main language already is loaded (just to be sure..)
-                //
-                // We load an array of all dependencies and call recursively this function on each entry
-                //
-                // dependencies is now an (possibly empty) array of loading-promises
-                var dependencies = getDependenciesOfLanguage(lang).map(loadLanguage);
-
-                // We create a promise, which will resolve, as soon as all dependencies are loaded.
-                // They need to be fully loaded because the main language may extend them.
-                return Promise.all(dependencies)
-                    .then(function () {
-
-                        // If the main language itself isn't already loaded, load it now
-                        // and return the newly created promise (we chain the promises).
-                        // If the language is already loaded, just do nothing - the next .then()
-                        // will immediately be called
-                        if (!Prism.languages[lang]) {
-                            return new Promise(function (resolve) {
-                                $u.script('components/prism-' + lang + '.js', resolve);
-                            });
-                        }
-                    });
-            }
-
-
-            /**
-             * Returns all dependencies (as identifiers) of a specific language
-             *
-             * @param {string} lang
-             * @returns {Array.<string>} the list of dependencies. Empty if the language has none.
-             */
-            function getDependenciesOfLanguage (lang)
-            {
-                if (!components.languages[lang] || !components.languages[lang].require)
-                {
-                    return [];
-                }
-
-                return ($u.type(components.languages[lang].require) === "array")
-                    ? components.languages[lang].require
-                    : [components.languages[lang].require];
-            }
-
-
-            var radios = $$('input[name=language]');
-            radios[0].checked = true;
-            radios[0].onclick();
-
-            var textarea = $('textarea', form);
-
-            (textarea.oninput = function() {
-                code.textContent = this.value || '';
-                highlightCode();
-            }).call(textarea);
-
-            })();
-
-        </script>
 
     </body>
 
