@@ -43,29 +43,6 @@ public class Graph {
             
             System.out.println();
         }
-        
-        
-        System.out.println("Vertex 5: " + graph.getVertex("5")); //null
-        System.out.println("Vertex 3: " + graph.getVertex("3")); //Vertex 3
-        
-        //true
-        System.out.println("Graph Contains {1, 2}: " +
-                graph.containsEdge(new Edge(graph.getVertex("1"), graph.getVertex("2"))));
-        
-        //true
-        System.out.println(graph.removeEdge(new Edge(graph.getVertex("1"), graph.getVertex("2")))); 
-        
-        //false
-        System.out.println("Graph Contains {1, 2}: " + graph.containsEdge(new Edge(graph.getVertex("1"), graph.getVertex("2"))));
-        
-        //false
-        System.out.println("Graph Contains {2, 3} " + graph.containsEdge(new Edge(graph.getVertex("2"), graph.getVertex("3"))));
-        
-        System.out.println(graph.containsVertex(new Vertex("1"))); //true
-        System.out.println(graph.containsVertex(new Vertex("6"))); //false
-        System.out.println(graph.removeVertex("2")); //Vertex 2
-        System.out.println(graph.vertexKeys()); //[3, 1, 0, 4]
-        
     }
 }
 
