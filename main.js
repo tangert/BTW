@@ -119,25 +119,27 @@ $(document).ready(function(){
             $(".content-wrapper").fadeIn();
 
         }
+        
+        var dataStructure = this.id;
 
         switch(currentLanguage) {
             case "java":
-                createDataStructureSwitch(this.id, "java");
+                switchDataStructure(dataStructure, "java");
                 break;
             case "python":
-                createDataStructureSwitch(this.id, "python");
+                switchDataStructure(dataStructure, "python");
                 break;
             case "javascript":
-                createDataStructureSwitch(this.id, "javascript");
+                switchDataStructure(dataStructure, "javascript");
                 break;
             case "c#":
-                createDataStructureSwitch(this.id, "c#");
+                switchDataStructure(dataStructure, "c#");
                 break;
             case "c++":
-                createDataStructureSwitch(this.id, "c++");
+                switchDataStructure(dataStructure, "c++");
                 break;
             case "swift":
-                createDataStructureSwitch(this.id, "swift");
+                switchDataStructure(dataStructure, "swift");
                 break;
             default:
                 break;
@@ -145,7 +147,7 @@ $(document).ready(function(){
         }
 
         //creates a switch statement to be executed for each language
-        function createDataStructureSwitch(sender, language) {
+        function switchDataStructure(sender, language) {
 
             switch(sender){
                 case "linkedlist":
@@ -213,25 +215,27 @@ $(document).ready(function(){
 
             }
 
+            var algorithm = this.id;
+        
             //switches content for each language selected
             switch(currentLanguage) {
                 case "java":
-                    createAlgorithmSwitch(this.id, "java");
+                    switchAlgorithm(algorithm, "java");
                     break;
                 case "python":
-                    createAlgorithmSwitch(this.id, "python");
+                    switchAlgorithm(algorithm, "python");
                     break;
                 case "javascript":
-                    createAlgorithmSwitch(this.id, "javascript");
+                    switchAlgorithm(algorithm, "javascript");
                     break;
                 case "c#":
-                    createAlgorithmSwitch(this.id, "c#");
+                    switchAlgorithm(algorithm, "c#");
                     break;
                 case "c++":
-                    createAlgorithmSwitch(this.id, "c++");
+                    switchAlgorithm(algorithm, "c++");
                     break;
                 case "swift":
-                    createAlgorithmSwitch(this.id, "swift");
+                    switchAlgorithm(algorithm, "swift");
                     break;
                 default:
                     break;
@@ -239,7 +243,7 @@ $(document).ready(function(){
 
                 
         //creates a switch statement to be executed for each language
-            function createAlgorithmSwitch(sender, language) {
+            function switchAlgorithm(sender, language) {
 
                 switch(sender){
                     case "breadth-first-search":
