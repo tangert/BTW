@@ -20,17 +20,44 @@
         <script src="highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         
+    <!--Paper.js-->
+        <script src = "paper-full.min.js"></script>
+       <script type = "text/paperscript" src = "background.js" canvas = "myCanvas"></script>
+        
+    <!--Standard links-->
         <script src="main.js"></script>
         <link rel ="stylesheet" href = "styles.css">
-        
+                
     </head>
 
-    <body>      
+<!--                <canvas id = "myCanvas"></canvas>-->
+
+    <body onload="document.body.style.opacity='1'">      
+      
       
        <div class="top-content text-center">
-          <h1>Beat the Big 4</h1>
-          <p>An interactive glossary of tech interview topics.</p>
-           <p id="madeBy">Made with lots of yelling by <a href = "https://www.tylerangert.com" id="name">Tyler Angert</a> <i>so you don't have to.</i></p>
+    
+            <h1>Beat the Big 4</h1>
+             
+           
+          <p>An interactive glossary of tech interview topics across several languages.</p>
+           <p id="madeBy">Made by <a href = "https://www.tylerangert.com" id="name">me</a> <i>so you don't shit your pants on the West Coast.</i>
+           </p>
+           
+             <div id = "top-buttons"> 
+<!--
+                 <button type="button" class="btn btn-secondary" id = "disclaimer-button">
+                 <a hred = "#" data-toggle="popover" data-placement="bottom" data-content="The current data structures and algorithms displayed are  basic examples of what you should be studying. Do not rely on this as your sole source of technical knowledge.">
+                     Disclaimer
+                 </a>
+                 
+                 </button>
+-->
+                 
+                 <a href="https://github.com/tangert/bb4"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+
+         </div>
+           
         </div>
 
 
@@ -38,7 +65,7 @@
         <!--SELECT LANGUAGE.-->
             <div class = "languages text-center">
 
-                <p id = languages-label>Choose a language</p>
+                <p id = "languages-label">Choose a language</p>
 
                 <div id = languages>
                     <ul class="nav nav-pills">
@@ -47,7 +74,7 @@
                       <li><a href="#" data-toggle="pill", id= "java">Java</a></li>
                       <li><a href="#" data-toggle="pill", id= "python">Python</a></li>
                       <li><a href="#" data-toggle="pill", id= "javascript">JavaScript</a></li>
-                      <li><a href="#" data-toggle="pill", id= "c#">C#</a></li>
+                      <li><a href="#" data-toggle="pill", id= "cs">C#</a></li>
                       <li><a href="#" data-toggle="pill", id= "c++">C++</a></li>
                       <li><a href="#" data-toggle="pill", id= "swift">Swift</a></li>
                     </ul>
@@ -71,7 +98,7 @@
         <!--SELECT SPECIFIC DATA STRUCTURE.-->
              <div class = "data-structures text-center">
 
-                <p>Choose a data structure</p>
+                <p id = "data-structures-label">Choose a data structure</p>
 
                 <ul class="nav nav-pills">
 
@@ -80,8 +107,24 @@
                   <li><a href="#" data-toggle="pill", id= "queue">Queue</a></li>
                   <li><a href="#" data-toggle="pill", id= "tree">Tree</a></li>
                   <li><a href="#" data-toggle="pill", id= "graph">Graph</a></li>
-                  <li><a href="#" data-toggle="pill", id= "dictionary">Dictionary</a></li>
                  </ul>
+                 
+                 
+        <!--Logic here to be implemented later-->
+                 <div id = "linkedlist-variations">
+                     <ul class = "nav nav-pills">
+                        <li><a href="#" data-toggle = "pill", id="singlylinked">Singly Linked</a></li>
+                        <li><a href="#" data-toggle = "pill", id="doublylinked">Doubly Linked</a></li>
+                     </ul>
+                </div>
+                
+                <div id = "stack-queue-variations">
+                     <ul class = "nav nav-pills">
+                        <li><a href="#" data-toggle = "pill", id="arrayimp">Array Implementation</a></li>
+                        <li><a href="#" data-toggle = "pill", id="linkedlistimp">LinkedList Implementation</a></li>
+                     </ul>
+                </div>
+        
 
              </div>
 
@@ -89,7 +132,7 @@
         <!--SELECT SPECIFIC ALGORITHM.-->
             <div class = "algorithms text-center">
 
-                    <p>Choose an algorithm</p>
+                    <p id = "algorithms-label">Choose an algorithm</p>
 
                     <!--nest in columns here to have proper searching/sorting separation-->
             <div class="row">
@@ -113,8 +156,6 @@
                       <li><a href="#" data-toggle="pill", id= "bubble-sort">Bubble Sort</a></li>
 
                     </ul>
-
-
                     </div>
                 </div>
             </div>
@@ -124,19 +165,6 @@
 
                 <!--Quick facts about Big-O stuff.-->
                 <div class = "quick-facts">
-
-<!--To be added later-->
-<!--
-                    <p id = "quick-facts-desc">Quick facts about chosen ds/alg</p>
-
-                    <div class = "pagination" id = "algorithm-quickfacts">
-                        <li><a href = "#">Time Complexity</a></li>
-                        <li><a href = "#">Space Complexity</a></li>
-                    </div>
-
-                    <div class = "pagination" id = "data-structure-quickfacts">
-                    </div>
--->
 
                 </div>
 
@@ -170,7 +198,5 @@
             </div>
 
     </body>
-
-
 
 </html>

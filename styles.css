@@ -3,27 +3,44 @@
 body {
     background-color: #2e2e2e;
     font-family: 'Ubuntu Mono', monospace;
+    
+    opacity:0;
+    transition: opacity 0.75s ease-in;
+    -webkit-transition: opacity 0.75s ease-in;
+    -moz-transition: opacity 0.75s ease-in;
+    -ms-transition: opacity 0.75s ease-in;
+    -o-transition: opacity 0.75s ease-in;
+}
+
+#myCanvas {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+    z-index: 0;
+    margin: 0 auto;
 }
 
 p {
     color: white;
 }
 
-/* stuff on top */
-.top-content {
-    opacity: 0.35;
-}
-
 .top-content h1, p {
-    color: ghostwhite
+    color: dimgray;
 }
 
-#madeBy {
+
+#madeBy, #disclaimer {
     font-size: 12px;
 }
 
+#disclaimer {
+    width: 300px;
+    margin: auto;
+}
+
 #name {
-    color: ghostwhite;
+    color: dimgray;
     transition: color 0.3s ease-in-out
 
 }
@@ -40,7 +57,7 @@ p {
     border-radius: 30px;
 }
 
-#languages-label {
+#languages-label, #data-structures-label, #algorithms-label {
     color: white;
     font-size: 16px;
 }
@@ -50,7 +67,8 @@ p {
 }
 
 
-.languages, .data-structures, .algorithms, .content-wrapper {
+.languages, .data-structures, .algorithms, .content-wrapper,
+#linkedlist-variations, #stack-queue-variations {
     padding-top: 20px;
 }
 
@@ -63,13 +81,8 @@ p {
 pre {
     background-color: #2e2e2e;
     border-color: #2e2e2e;
-    border-radius: 20px;
+    border-radius: 10px;
 }
-
-code {
-    border-radius: 20px;
-}
-
 
 #code-desc {
     opacity: 0.85;
@@ -104,7 +117,7 @@ code {
 
 .nav-pills>li.active>a {
     transition: border-radius 0.3s ease-in-out;
-    border-radius: 2px;
+    border-radius: 3px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -118,10 +131,11 @@ code {
     border-color: white;
     border-style: solid;
     border-radius: 20px;
-
+    
     transition: color 0.3s ease-in-out;
     transition: background-color 0.3s linear;
     transition: border-radius 0.3s ease-in-out;
+
 
 }
 
@@ -136,6 +150,6 @@ code {
 
     color:dimgray;
     background-color: white;
-    transition: border-radius 0.2s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
 
 }

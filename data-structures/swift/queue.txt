@@ -1,0 +1,80 @@
+struct QueueArray<T> {
+    private var items = [T]()
+
+    mutating func enQueue(item: T) {
+        items.append(item)
+    }
+
+    mutating func deQueue() -> T? {
+        return items.removeFirst()
+    }
+
+    func isEmpty() -> Bool {
+        return items.isEmpty
+    }
+
+    func peek() -> T? {
+        return items.first
+    }
+}
+
+// QUEUE WITH NODE IMPLEMENTATION (For performance, if all you need is a queue this is it):
+
+class QNode<T> {
+    var value: T
+    var next: QNode?
+
+    init(item:T) {
+        value = item
+    }
+}
+
+struct Queue<T> {
+    private var top: QNode<T>!
+    private var bottom: QNode<T>!
+
+    init() {
+        top = nil
+        bottom = nil
+    }
+
+    mutating func enQueue(item: T) {
+
+        let newNode:QNode<T> = QNode(item: item)
+
+        if top == nil {
+            top = newNode
+            bottom = top
+            return
+        }
+
+        bottom.next = newNode
+        bottom = newNode
+    }
+
+    mutating func deQueue() -> T? {
+
+        let topItem: T? = top?.value
+        if topItem == nil {
+            return nil
+        }
+
+        if let nextItem = top.next {
+            top = nextItem
+        } else {
+            top = nil
+            bottom = nil
+        }
+
+        return topItem
+    }
+
+    func isEmpty() -> Bool {
+
+        return top == nil ? true : false
+    }
+
+    func peek() -> T? {
+        return top?.value
+    }
+}

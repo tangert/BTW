@@ -1,0 +1,49 @@
+public class Queue {
+  
+  private int[] data;     
+  private int size;       
+  private int front = -1; 
+  private int back = 0;   
+  private int count = 0;
+
+  public Queue() { 
+    size = 10;
+    data = new int[size];
+  }
+  
+  public Queue(int size) {
+    this.size = size;
+    data = new int[size];
+  }       
+  
+  public bool IsEmpty() {
+    return  count == 0;
+  }
+  
+  public bool IsFull() {
+    return count == size;
+  }
+  
+  public void Add(int i){
+    if (IsFull())
+      throw new ApplicationException("Queue full");
+    else {
+      count++;
+      data[back++ % size] = i;
+    }
+  }
+  public int Remove(){
+    if (IsEmpty())
+       throw new ApplicationException("Queue empty");
+    else {
+       count--;
+       return data[++front % size];
+    }
+  }
+  public int Head(){
+    if (IsEmpty()){
+      throw new ApplicationException("Queue empty");
+    }
+    else
+      return data[(front+1) % size];
+  }

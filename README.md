@@ -8,6 +8,7 @@ Technologies used in particular:
  - Bootstrap
  - jQuery
  - Prism.js: syntax highlighting 
+ - 
  
 Everythign else is vanilla JS and HTML/CSS.
 

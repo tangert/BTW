@@ -1,12 +1,18 @@
 $(function(){
     $(".data-structures").hide();
     $(".algorithms").hide();
+    
+    $("#linkedlist-variations").hide();
+    $("#stack-queue-variations").hide();
+    
     $(".content-wrapper").hide();
     $(".selection-content").hide();
     
 });
 
 $(document).ready(function(){
+        
+//    $('[data-toggle="popover"]').popover()
     
     //some variable initialization 
     var currentLanguage, 
@@ -15,7 +21,20 @@ $(document).ready(function(){
 
     var languageIsSelected,
         dataStructureIsSelected,
-        algorithmIsSelected= false;
+        algorithmIsSelected = false;
+    
+    //specific stuff for linked list, stack, and queue
+    var linkedlistIsSelected,
+        stackIsSelected,
+        queueIsSelected = false;
+    
+    //initial window stuff
+    var canvas = document.getElementById("myCanvas");
+    
+    $(window).on('resize', function() {
+        $("myCanvas").height = window.height();
+        $("myCanvas").width = window.width();
+    });
     
     //functions
     $("#dataStructuresBtn").click(function(){
@@ -23,6 +42,14 @@ $(document).ready(function(){
         if(languageIsSelected) {
             $(".data-structures").fadeIn();
             $(".algorithms").hide();
+        }
+        
+        if(algorithmIsSelected) {
+            dataStructureIsSelected = true;
+            algorithmIsSelected = false;
+            
+            $("#" + currentDataStructure).trigger("click");
+            
         }
 
     });
@@ -32,6 +59,14 @@ $(document).ready(function(){
         if(languageIsSelected) {
             $(".algorithms").fadeIn();
             $(".data-structures").hide();
+        }
+        
+        if(dataStructureIsSelected) {
+            algorithmIsSelected = true;
+            dataStructureIsSelected = false;
+            
+            $("#" + currentAlgorithm).trigger("click");
+            
         }
 
     });
@@ -45,6 +80,8 @@ $(document).ready(function(){
         $(".selection-content").fadeIn();
           
         //switch statement 
+        
+        //adjust to accomodate stack, queue, linked list variations. 
         
         if (dataStructureIsSelected) {            
             switch(currentDataStructure){
@@ -62,9 +99,6 @@ $(document).ready(function(){
                     break;
                 case "graph":
                     $("#graph").trigger("click");
-                    break;
-                case "dictionary":
-                    $("#dictionary").trigger("click");
                     break;
                 default:
                     break;
@@ -132,8 +166,8 @@ $(document).ready(function(){
             case "javascript":
                 switchDataStructure(dataStructure, "javascript");
                 break;
-            case "c#":
-                switchDataStructure(dataStructure, "c#");
+            case "cs":
+                switchDataStructure(dataStructure, "cs");
                 break;
             case "c++":
                 switchDataStructure(dataStructure, "c++");
@@ -149,6 +183,9 @@ $(document).ready(function(){
         //creates a switch statement to be executed for each language
         function switchDataStructure(sender, language) {
 
+            //adjust to accomodate stack, queue, linked list variations. 
+            //stack, queue, linkedlist buttons only to show further choices
+            
             switch(sender){
                 case "linkedlist":
                     updateCodeContent(sender, language, "linkedlist");
@@ -164,9 +201,6 @@ $(document).ready(function(){
                     break;
                 case "graph":
                     updateCodeContent(sender, language, "graph");
-                    break;
-                case "dictionary":
-                    updateCodeContent(sender, language, "dictionary");
                     break;
                 default:
                     updateCodeContent(sender, "markup", "");
@@ -210,9 +244,7 @@ $(document).ready(function(){
 
         
             if (languageIsSelected && algorithmIsSelected) {
-
-                $(".code-wrapper").fadeIn();
-
+                $(".content-wrapper").fadeIn();
             }
 
             var algorithm = this.id;
@@ -228,8 +260,8 @@ $(document).ready(function(){
                 case "javascript":
                     switchAlgorithm(algorithm, "javascript");
                     break;
-                case "c#":
-                    switchAlgorithm(algorithm, "c#");
+                case "cs":
+                    switchAlgorithm(algorithm, "cs");
                     break;
                 case "c++":
                     switchAlgorithm(algorithm, "c++");
@@ -298,7 +330,11 @@ $(document).ready(function(){
                 });
 
                 var descriptionPath = "descriptions/algorithm-descriptions.html " + "#";
-                $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
+                $("#code-desc").load(descriptionPath + sender).hide().fadeIn();
+                
+                //image path
+                //var imagePath = path/to/image
+                //$("#code-images").load(imagePath + sender).hide().fadeIn();
             }
         
             function highlightBlockInPage() {

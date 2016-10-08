@@ -1,0 +1,39 @@
+public class Queue {
+	private LinkedList list;
+	
+	// Queue constructor
+	public Queue() {
+		// Create a new LinkedList.
+		list = new LinkedList();
+	}
+
+	public boolean isEmpty() {
+		return (list.size() == 0);
+	}
+
+    // Post: An item is added to the back of the queue.
+	public void enqueue(Object item) {
+		// Append the item to the end of our linked list.
+		list.add(item);
+	}
+
+    // Pre: this.isEmpty() == false
+	// Post: The item at the front of the queue is returned and 
+	//         deleted from the queue. Returns null if precondition
+	//         not met.
+	public Object dequeue() {
+
+		Object item = list.get(1);
+		list.remove(1);
+		return item;
+	}
+
+    // Pre: this.isEmpty() == false
+	// Post: The item at the front of the queue is returned and 
+	//         deleted from the queue. Returns null if precondition
+	//         not met.
+	public Object peek()
+	{
+		return list.get(1);
+	}
+}

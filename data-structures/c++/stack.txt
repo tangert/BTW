@@ -1,0 +1,66 @@
+//HEADER FILE
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+template <class T>
+class Stack{
+
+private:
+	vector<T> data;
+
+public:
+	bool Empty(); //checks if stack is empty 
+	void Push(T item); //adds item to stack
+	T Top(); //returns item at top of stack
+	void Pop(); //removes item at top of stack
+	friend ostream& operator<<(ostream&out, const Stack &s); //overloaded output operator
+
+};
+
+//IMPLEMENTATION
+
+#include <iostream>
+#include <vector>
+#include "Stack.h"
+using namespace std;
+
+template <class T>
+bool Stack<T>::Empty() //checks if stack is empty 
+{
+	return data.empty();
+}
+
+template <class T>
+void Stack<T>::Push(T item) //adds item to stack
+{
+	data.push_back(item);
+
+}
+
+template <class T>
+T Stack<T>::Top() //returns item at top of stack
+{
+	if(data.back()>-1)
+	return data.back();
+
+	else
+		cerr<<"Stack is empty\n";
+}
+
+template <class T>
+void Stack<T>::Pop() //removes item at top of stack
+{
+	data.pop_back();
+}
+
+template <class T>
+ostream & operator<<(ostream&out, const Stack<T> &s) //overloaded output operator
+{
+	while(!s.Empty())
+	{
+	out<<s.Top();
+	s.Pop();
+	}return out;
+}
