@@ -10,9 +10,26 @@ $(function(){
     
 });
 
+//trying to update canvas size...
+
+//function updateCanvas() {
+//    var canvasNode = document.getElementById('myCanvas');
+//    canvasNode.width = canvasNode.parentNode.clientWidth;
+//    canvasNode.height = canvasNode.parentNode.clientHeight;
+//}
+//
+//$( window ).resize(function() {
+//  updateCanvas();
+//});
+
+
 $(document).ready(function(){
         
 //    $('[data-toggle="popover"]').popover()
+    
+
+
+
     
     //some variable initialization 
     var currentLanguage, 
