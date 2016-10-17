@@ -1,5 +1,5 @@
 // The amount of circles we want to make:
-var count = 150;
+var count = 100;
 
 // Create a symbol, which we will use to place instances of later:
 

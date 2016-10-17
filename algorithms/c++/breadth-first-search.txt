@@ -1,0 +1,23 @@
+//traverses a graph.
+
+void Graph::BFS(int Start)
+{
+    bool* visited = new bool[this->num_of_vertices]();
+    queue<int> queue;
+    queue.push(Start);
+    vector<int>::iterator i;
+    cout << "BFS: ";
+    while(!queue.empty())
+    {
+        Start = queue.front();  
+        cout << Start << " ";
+        visited[Start] = true;
+        queue.pop();
+        for (i = Adj[Start].begin(); i != Adj[Start].end(); i++)
+        {
+            if (!visited[*i])
+                queue.push(*i);
+        }
+    }
+    cout << endl;
+}

@@ -28,20 +28,8 @@ public class Graph {
                 System.out.println(vertices[i].getNeighbor(j));
             }
             
-            System.out.println();
         }
         
-        //overwritte Vertex 3
-        graph.addVertex(new Vertex("3"), true);
-        for(int i = 0; i < vertices.length; i++){
-            System.out.println(vertices[i]);
-            
-            for(int j = 0; j < vertices[i].getNeighborCount(); j++){
-                System.out.println(vertices[i].getNeighbor(j));
-            }
-            
-            System.out.println();
-        }
     }
 }
 

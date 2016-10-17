@@ -63,7 +63,7 @@ p {
     border-radius: 30px;
 }
 
-#languages-label, #data-structures-label, #algorithms-label {
+#languages-label, #data-structures-label, #algorithms-label{
     color: white;
     font-size: 16px;
 }
@@ -82,6 +82,49 @@ p {
     padding-left: 10px;
     padding-right: 10px;
     color: white;
+}
+
+#quick-facts-title {
+    color: white;
+    opacity: 0.45;
+    font-size: 14px;
+}
+
+table {
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 2.5px;
+    word-wrap: break-word;
+    table-layout: fixed;
+    border-style: hidden;
+}
+
+thead th {
+    background-color: white;
+    color: dimgray;
+    opacity: 0.75;
+    overflow: hidden;
+    text-align: center;
+}
+
+tbody td {
+    background-color: dimgrey;
+    opacity: 0.75;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 pre {

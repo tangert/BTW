@@ -1,1 +1,22 @@
-graph
+//traverses a graph
+void Graph::DFS(int Start)
+{
+    bool* visited = new bool[this->num_of_vertices]();
+    stack<int> stack;
+    stack.push(Start);
+    vector<int>::iterator i;
+    cout << "DFS: ";
+    while(!stack.empty())
+    {
+        int top = stack.top();
+        cout << top << " ";
+        stack.pop();
+        visited[top] = true;
+        for(i = Adj[top].begin(); i != Adj[top].end(); i++)
+        {
+            if (!visited[*i])
+                stack.push(*i);
+        }
+    }
+    cout << endl;
+}

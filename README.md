@@ -7,8 +7,7 @@ This is also the first legit website I've pretty much ever made, so it was a gre
 Technologies used in particular: 
  - Bootstrap
  - jQuery
- - Prism.js: syntax highlighting 
- - 
+ - Highlight.js: syntax highlighting 
  
 Everythign else is vanilla JS and HTML/CSS.
 
