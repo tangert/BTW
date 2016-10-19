@@ -11,6 +11,6 @@ Technologies used in particular:
  
 Everythign else is vanilla JS and HTML/CSS.
 
-Enjoy and visit bb4.io to see it in action!
+Enjoy and visit tangert.github.io/BB4 to see it in action!
 
-FORK AND CONTRIBUTE TO MAKE EVERYONE'S LIVES EASIER
+Fork and contribute pls!
