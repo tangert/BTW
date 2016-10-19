@@ -1,0 +1,17 @@
+var queue = new Queue<BinaryNode>();
+queue.Enqueue(rootNode);
+
+while(queue.Any())
+{
+  var currentNode = queue.Dequeue();
+  if(currentNode.data == searchedData)
+  {
+    break;
+  }
+
+  if(currentNode.Left != null)
+    queue.Enqueue(currentNode.Left);
+
+  if(currentNode.Right != null)
+    queue.Enqueue(currentNode.Right);
+}

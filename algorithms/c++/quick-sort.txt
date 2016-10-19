@@ -1,1 +1,37 @@
-tree
+void quicksort(int *arr, const int left, const int right, const int sz){
+
+    int part = partition(arr, left, right);
+    std::cout << "QSC:" << left << "," << right << " part=" << part << "\n";
+    print (arr, sz);
+
+    if (left < part - 1) {
+        quicksort(arr, left, part - 1, sz);
+    }
+    if (part + 1 < right) {
+        quicksort(arr, part + 1, right, sz);
+    }
+}
+
+int partition(int *arr, const int left, const int right) {
+    const int mid = left + (right - left) / 2;
+    const int pivot = arr[mid];
+    // move the mid point value to the front.
+    std::swap(arr[mid],arr[left]);
+    int i = left + 1;
+    int j = right;
+    while (i <= j) {
+        while(i <= j && arr[i] <= pivot) {
+            i++;
+        }
+
+        while(i <= j && arr[j] > pivot) {
+            j--;
+        }
+
+        if (i < j) {
+            std::swap(arr[i], arr[j]);
+        }
+    }
+    std::swap(arr[i - 1],arr[left]);
+    return i - 1;
+}

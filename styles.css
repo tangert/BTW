@@ -83,6 +83,11 @@ a:hover {
     font-size: 16px;
 }
 
+#sorting-label, #searching-label{
+    color: white;
+    opacity: 0.75;
+}
+
 .selection-content {
     padding-top: 40px;
 }
@@ -98,8 +103,8 @@ a:hover {
 }
 
 .content-wrapper {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: white;
 }
 
@@ -107,11 +112,14 @@ pre {
     background-color: #2e2e2e;
     border-color: #2e2e2e;
     border-radius: 10px;
+    white-space: nowrap;
 }
+
 
 #code-desc {
     color: white;
     opacity: 0.85;
+    margin-left: -10px;
 }
 
 .hl-details {

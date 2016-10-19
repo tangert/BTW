@@ -1,1 +1,19 @@
-tree
+public static T[] InsertionSort<T>(T[] inputarray, Comparer<T> comparer=null)
+    {
+        var equalityComparer = comparer ?? Comparer<T>.Default;
+        for (var counter = 0; counter < inputarray.Length - 1; counter++)
+        {
+            var index = counter + 1;
+            while (index > 0)
+            {
+                if(equalityComparer.Compare(inputarray[index - 1],inputarray[index])>0)
+                {
+                    var temp = inputarray[index - 1];
+                    inputarray[index - 1] = inputarray[index];
+                    inputarray[index] = temp;
+                }
+                index--;
+            }
+        }
+        return inputarray;
+    }

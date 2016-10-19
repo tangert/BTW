@@ -9,25 +9,25 @@
        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         
     <!--Bootstrap-->
-        <link rel="stylesheet" href="bootstrap/bootstrap.min.css"></link>
-        <script src="bootstrap/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="libraries/bootstrap/bootstrap.min.css"></link>
+        <script src="libraries/bootstrap/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
     <!--custom fonts-->
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
 
     <!--Highlight.js-->
-        <link rel="stylesheet" href="highlightjs/styles/school-book.css">
-        <script src="highlightjs/highlight.pack.js"></script>
+        <link rel="stylesheet" href="libraries/highlightjs/styles/school-book.css">
+        <script src="libraries/highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         
     <!--Paper.js-->
         <script src = https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-full.min.js></script>
        <script type = "text/paperscript" src = "background.js" canvas = "myCanvas"></script>
-        
+               
     <!--Standard links-->
         <script src="main.js"></script>
-        <link rel ="stylesheet" href = "css/styles.css">                
+        <link rel ="stylesheet" href = "styles.css">                
     </head>
 
 
@@ -62,7 +62,6 @@
                     <!--class="active"-->
                       <li><a href="#" data-toggle="pill", id= "java">Java</a></li>
                       <li><a href="#" data-toggle="pill", id= "python">Python</a></li>
-                      <li><a href="#" data-toggle="pill", id= "javascript">JavaScript</a></li>
                       <li><a href="#" data-toggle="pill", id= "cs">C#</a></li>
                       <li><a href="#" data-toggle="pill", id= "c++">C++</a></li>
                     </ul>
@@ -108,7 +107,8 @@
             <div class="row">
                 <div class="col-md-12" id="wrapper">
                     <ul class="nav nav-pills">
-
+    
+                   <h5 class = "text-center" id = "searching-label">Searching</h5>
                     <!--Searching-->
                       <li><a href="#" data-toggle="pill", id= "breadth-first-search">Breadth First Search</a></li>
                       <li><a href="#" data-toggle="pill", id= "depth-first-search">Depth First Search</a></li>
@@ -117,6 +117,7 @@
 
                         <br></br>
 
+                   <h5 class = "text-center" id = "sorting-label">Sorting</h5>
                     <!--Sorting-->
                       <li><a href="#" data-toggle="pill", id= "heap-sort">Heap Sort</a></li>
                       <li><a href="#" data-toggle="pill", id= "insertion-sort">Insertion Sort</a></li>

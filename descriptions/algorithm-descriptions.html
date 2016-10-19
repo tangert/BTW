@@ -3,53 +3,63 @@
 
 <html>
     
+    <head>
+        <script src = "descriptions/animations.js"></script>
+    </head>
+    
     <body> 
     
         <!--Searching-->
         <div id = "breadth-first-search">
-            <a href = "https://en.wikipedia.org/wciki/Breadth_first_search" target="_blank" class = "content-links">Breadth-first search</a> is used to traverse search-trees (Binary search tree, Red-Black tree, etc.) or graphs. BFS starts at some arbitrary <span class = "hl-details">root node</span> and explores all the neighbor nodes around it. After all adjacent nodes have been found around the chosen <span class = "hl-details">root</span>, BFS moves to the next node in the order.
+            <a href = "https://en.wikipedia.org/wiki/Breadth-first_search" target="_blank" class = "content-links">Breadth-first search</a> is used to traverse search-trees (Binary search tree, Red-Black tree, etc.) or graphs. BFS starts at some arbitrary <span class = "hl-details">root node</span> and explores all the neighbor nodes around it. After all adjacent nodes have been found around the chosen <span class = "hl-details">root</span>, BFS moves to the next node in the order.
             
             <br><br>
             
             When using BFS, you have to keep track of which nodes have been visited. We keep track of this using a <span class = "hl-details">queue</span>.
             
+            
         </div>
         
         <div id = "depth-first-search">
-           Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. It starts at some arbitrary "root" node and explores as far as possible along each branch before backtracking.
+            <a href = "https://en.wikipedia.org/wiki/Depth-first_search" target="_blank" class = "content-links">Depth-first search</a> (DFS) is used to traverse search-trees (Binary search tree, Red-Black tree, etc.) or graphs. DFS starts at some arbitrary <span class = "hl-details">root node</span> and explores as far as possible along that branch. After it has found all neighbors within a branch, DFS backtracks to the next node after the root and begins the process again. 
+            
+            <br><br>
+            
+            When using DFS, you have to keep track of which nodes have been visited. We keep track of this using a <span class = "hl-details">queue</span>.
+            
         </div>
         
         <div id = "linear-search">
-           Linear search is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched.
+            <a href = "https://en.wikipedia.org/wiki/Linear_search" target="_blank" class = "content-links">Linear search</a> is used to find a certain value in a list. It sequentially– or rather, <span class = "hl-details">linearly</span>– checks each element of the list for the target value until a match is found or until all the elements have been searched. Linear search is pretty slow and is commonly referred to as being <a href = "https://en.wikipedia.org/wiki/Brute-force_attack" target="_blank" class = "content-links">brute force</a>.
         </div>
         
         <div id = "binary-search">
-           Binary search, also known as half-interval search or logarithmic search, is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful.
+            <a href = "https://en.wikipedia.org/wiki/Binary_search" target="_blank" class = "content-links">Binary search</a> is used to find a certain value in a list. It compares the target value to the <span class = "hl-details">middle element</span> of the array. If the two values are unequal, the half where the value can't be is  eliminated from the search. Then, the search continues on the remaining half until the target value is found. For this reason, Binary search is also called the <span class = "hl-details">half-interval search</span> or the <span class = "hl-details">logarithmic search</span>.
         </div>
         
         <!--Sorting-->
         <div id = "heap-sort">
-           Heapsort can be thought of as an improved selection sort: like that algorithm, it divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. The improvement consists of the use of a heap data structure rather than a linear-time search to find the maximum.
+            <a href = "https://en.wikipedia.org/wiki/Heapsort" target="_blank" class = "content-links">Heapsort</a> is used to sort a given list of elements. divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. The improvement consists of the use of a heap data structure rather than a linear-time search to find the maximum.
         </div>
         
         <div id = "insertion-sort">
-           Insertion sort inserts each item in the proper place into an initially empty list by comparing it with each item in the list until it finds the new element's successor or the end of the list. 
+            <a href = "https://en.wikipedia.org/wiki/Insertion_sort" target="_blank" class = "content-links">Insertion sort</a> is used to sort a given list of elements. inserts each item in the proper place into an initially empty list by comparing it with each item in the list until it finds the new element's successor or the end of the list. 
         </div>
         
         <div id = "merge-sort">
-            Merge sort is a recursive algorithm that continually splits a list in half. If the list is empty or has one item, it is sorted by definition (the base case). If the list has more than one item, we split the list and recursively invoke a merge sort on both halves. Once the two halves are sorted, the fundamental operation, called a merge, is performed.
+            <a href = "https://en.wikipedia.org/wiki/Merge_sort" target="_blank" class = "content-links">Merge sort</a> is used to sort a given list of elements. is a recursive algorithm that continually splits a list in half. If the list is empty or has one item, it is sorted by definition (the base case). If the list has more than one item, we split the list and recursively invoke a merge sort on both halves. Once the two halves are sorted, the fundamental operation, called a merge, is performed.
         </div>
         
         <div id = "quick-sort">
-            Quicksort sequences a list by continuously dividing the list into two parts and moving the lower items to one side and the higher items to the other. It starts by picking one item in the entire list to serve as a pivot point. The pivot could be the first item or a randomly chosen one. All items that compare lower than the pivot are moved to the left of the pivot; all equal or higher items are moved to the right. It then picks a pivot for the left side and moves those items to left and right of the pivot and continues the pivot picking and dividing until there is only one item left in the group. It then proceeds to the right side and performs the same operation again.
+            <a href = "https://en.wikipedia.org/wiki/Quicksort" target="_blank" class = "content-links">Quicksort</a>  is used to sort a given list of elements. It sequences a list by continuously dividing the list into two parts and moving the lower items to one side and the higher items to the other. It starts by picking one item in the entire list to serve as a pivot point. The pivot could be the first item or a randomly chosen one. All items that compare lower than the pivot are moved to the left of the pivot; all equal or higher items are moved to the right. It then picks a pivot for the left side and moves those items to left and right of the pivot and continues the pivot picking and dividing until there is only one item left in the group. It then proceeds to the right side and performs the same operation again.
         </div>
         
         <div id = "selection-sort">
-            Selection sort divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.
+            <a href = "https://en.wikipedia.org/wiki/Selection_sort" target="_blank" class = "content-links">Selection sort</a> is used to sort a given list of elements. It divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.
         </div>
         
         <div id = "bubble-sort">
-            A sorting technique in which pairs of adjacent values in the list to be sorted are compared and interchanged if they are out of order; thus, list entries "bubble upward" in the list until they bump into one with a lower sort value.
+            <a href = "https://en.wikipedia.org/wiki/Bubble_sort" target="_blank" class = "content-links">Bubble sort</a> is used to sort a given list of elements. It pairs of adjacent values in the list to be sorted are compared and interchanged if they are out of order; thus, list entries "bubble upward" in the list until they bump into one with a lower sort value.
         </div>
     
     </body>
