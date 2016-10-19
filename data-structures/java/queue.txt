@@ -1,23 +1,17 @@
+//We will use a linkedlist to implement the queue.
+
 public class Queue {
-	private Int[];
 	
-	// Queue constructor
+	//Queue constructor
 	public Queue() {
-		// Create a new LinkedList.
 		list = new LinkedList();
 	}
 
-	public boolean isEmpty() {
-		return (list.size() == 0);
-	}
-
 	public void enqueue(Object item) {
-		// Append the item to the end of our linked list.
 		list.add(item);
 	}
     
     public Object dequeue() {
-
 		Object item = list.get(1);
 		list.remove(1);
 		return item;

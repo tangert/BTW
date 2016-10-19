@@ -1,37 +1,3 @@
-//First create the Node
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-
-public class Node {
-
-    private String identifier;
-    private ArrayList<String> children;
-
-    // Constructor
-    public Node(String identifier) {
-        this.identifier = identifier;
-        children = new ArrayList<String>();
-    }
-
-    // Properties
-    public String getIdentifier() {
-        return identifier;
-    }
-
-    public ArrayList<String> getChildren() {
-        return children;
-    }
-
-    // Public interface
-    public void addChild(String identifier) {
-        children.add(identifier);
-    }
-}
-
-//Create the Tree
-
 public class Tree {
 
     private final static int ROOT = 0;
@@ -100,3 +66,28 @@ public class Tree {
     }
 }
 
+public class Node {
+
+    private String identifier;
+    private ArrayList<String> children;
+
+    // Constructor
+    public Node(String identifier) {
+        this.identifier = identifier;
+        children = new ArrayList<String>();
+    }
+
+    // Properties
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public ArrayList<String> getChildren() {
+        return children;
+    }
+
+    // Public interface
+    public void addChild(String identifier) {
+        children.add(identifier);
+    }
+}

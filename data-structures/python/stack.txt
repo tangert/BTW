@@ -1,10 +1,9 @@
+//Arrays in python are inherently mutable, so they function similarly to an arraylist. 
+
 class Stack:
      def __init__(self):
          self.items = []
-
-     def isEmpty(self):
-         return self.items == []
-
+         
      def push(self, item):
          self.items.append(item)
 

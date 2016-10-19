@@ -5,23 +5,192 @@
     <body>
         
         <div id = "linkedlist">
-            A linked list is a linear collection of data elements, called nodes, each pointing to the next node by means of a pointer. It is a data structure consisting of a group of nodes which together represent a sequence.
-        </div>
-    
-        <div id = "graph">
-            A graph consists of a set of vertices or nodes or points, together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges, arcs, or lines for an undirected graph and as arrows, directed edges, directed arcs, or directed lines for a directed graph. The vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
+           
+            A <a href = "https://en.wikipedia.org/wiki/Linked_list" target="_blank" class = "content-links">linkedlist</a> is a linear collection of elements, called <span class = "hl-details">nodes</span>, that point to the next node through a <span class = "hl-details">pointer</span>.
+            
+            <br><br>
+            
+            <img src = "data-structure-images/linkedlist.png" class = "data-structure-image"></img>
+            
+            <br><br>
+            
+            For the purpose of this tutorial, we will look at <span class = "hl-details">singly</span> linkedlists. Singly linkedlists have a reference to the node <i>after</i> them, not before. A linkedlist where each node has a reference before <i>and after</i> it are called <span class = "hl-details">doubly</span> linkedlists. In special cases, some doubly linkedlists have nodes where the last node has a reference to the first node. These are called <span class = "hl-details">circular</span> linkedlists.
+            
+            <br><br>
+            
+            <div class = "pop-methods">
+                <h2>Popular methods:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Add:</span> adds a node at the end of the list</li>
+                        <li><span class = "hl-details">Add at index:</span> adds a node at a specified index</li>
+                        <li><span class = "hl-details">Remove:</span> removes the last node in the list</li>
+                        <li><span class = "hl-details">Remove at index:</span> removes a node at a specified index</li>
+                        <li><span class = "hl-details">Get:</span> returns the data in a specific node</li>
+                        <li><span class = "hl-details">Size:</span> returns the size of the list</li>
+                    </ul>
+            </div>
+            
+            <br><br>
+            
+            In real life, singly linkedlists can be represented easily by something like a conga line. Each person in the conga has their hands extended to the shoulders of the next person. Each person thus has a reference to the next person in front of them.
+            
+            <br><br>
+            
+            More abstractly, a linked list can be represented by a treasure map where each clue is a node. Each clue hints to the next clue and is thus essentially a <span class = "highlighted-details">pointer</span> to the next clue.
+            
         </div>
         
+        
+        
         <div id = "stack">
-            A stack is a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the most recently added element that was not yet removed.
+            A <a href = "https://en.wikipedia.org/wiki/Stack_(data_structure)" target="_blank" class = "content-links">stack</a> is a collection of elements that resembles a <i>stack of something.</i> The <i>last element</i> that is added becomes the <i>first element</i> to be removed. This is known as Last In, First Out, or <span class = "hl-details">LIFO</span>.
+            
+            <br><br>
+            
+            <img src = "data-structure-images/stack.png" class = "data-structure-image"></img>
+            
+            <br><br>
+
+            
+            For this tutorial, we will implement a stack using a <span class = "hl-details">linkedlist</span> or <span class = "hl-details">array</span> depending on the selected language.
+            
+            <br><br>
+            
+            <div class = "pop-methods">
+                <h2>Popular methods:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Push:</span> pushes an element on top of the stack</li>
+                        <li><span class = "hl-details">Pop:</span> removes the last element on the top of the stack</li>
+                        <li><span class = "hl-details">Peek:</span> returns the value of the last element on top of the stack</li>
+                        <li><span class = "hl-details">Size:</span> returns the number of elements in the stack</li>
+                    </ul>
+            </div>
+            
+            <br><br>
+            
+            A real life example of a stack can be represented by a <span class = "hl-details">stack of cards</span>. Each time a new card is added, it gets added to the top of the card stack. Each time a card is removed, the card on top is removed. Pretty simple. 
+            
         </div>
         
         <div id = "queue">
-            A queue is a collection of elements in which the entities in the collection are kept in order and the principal (or only) operations on the collection are the addition of entities to the rear terminal position, known as enqueue, and removal of entities from the front terminal position, known as dequeue.
+            A <a href = "https://en.wikipedia.org/wiki/Queue_(data_structure)" target="_blank" class = "content-links">queue</a> is a collection of elements that represents a queue or <i>line</i> of elements. The <i>first element</i> that is added to the queue becomes the <i>first element</i> to be removed. This is known as First In, First Out, or <span class = "hl-details">FIFO</span>. In colloquial terms, this is also known as "First come, first serve." 
+            
+            <br><br>
+            
+            <img src = "data-structure-images/queue.png" class = "data-structure-image"></img>
+            
+            <br><br>
+            
+            For this tutorial, we will implement a stack using a <span class = "hl-details">linkedlist</span> or <span class = "hl-details">array</span> depending on the selected language.
+            
+            <br><br>
+            
+            <div class = "pop-methods">
+                <h2>Popular methods:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Enqueue:</span> adds an element to the front of the queue</li>
+                        <li><span class = "hl-details">Dequeue:</span> removes the first element in the queue</li>
+                        <li><span class = "hl-details">Peek:</span> returns the value of the first element in the queue</li>
+                        <li><span class = "hl-details">Size:</span> returns the number of elements in the stack</li>
+                    </ul>
+            </div>
+            
+            <br><br>
+            
+            A real life example of a queue is, well, a <span class = "hl-details">music queue</span> on something like Spotify. Each song that is added to the queue is the first one to be listened to when the queue is played. Another example would be standing in line at the grocery store. Customers enter a queue– a line to purchase their grocieries– and move through the queue until they've purchased everything.
+        
         </div>
         
         <div id = "tree">
-           A tree simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes.
+            A <a href = "https://en.wikipedia.org/wiki/Tree_(data_structure)" target="_blank" class = "content-links">tree</a> is a collection of elements presented in the form of a hierarchical tree. A tree starts with a <span class = "highlighted-details">root node</span> and all other nodes have references to their "<span class = "hl-details">parent</span>" and "<span class = "hl-details">child</span>" nodes. 
+            
+            <br><br>
+            
+            <img src = "data-structure-images/tree.png" class = "data-structure-image"></img>
+            
+            <br><br>
+            
+            
+            One of the <i>most common</i> tree structures is the <a href = "https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" class = "content-links">Binary search tree</a>, so we will focus on that in this implementation.
+            
+            <br><br> 
+            
+            Trees are pretty tricky to come up with a "general" implementation for because every node in a tree can <i>itself</i> be considered a tree, and there are many different types of trees. As in this tutorial, there is the <a href = "https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" class = "content-links">Binary search tree</a>, the <a href = "https://en.wikipedia.org/wiki/Red-black_tree" target="_blank" class = "content-links">Red-Black tree</a>, <a href = "https://en.wikipedia.org/wiki/Cartesian_tree" target="_blank" class = "content-links">Cartesian tree</a>...the list goes on and on. Below are some basic definitions to clear up any misunderstandings. Other tree structures include  <a href = "https://en.wikipedia.org/wiki/Heap_(data_structure)" target="_blank" class = "content-links">heaps</a> and <a href = "https://en.wikipedia.org/wiki/Trie" target="_blank" class = "content-links">tries</a>.
+            
+            <br><br>
+                        
+            <h2>Basic definitions:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Binary tree:</span> a tree where each parent node has <i>at most</i> two children nodes. This is the base for many commonly used tree structures</li>
+                        <li><span class = "hl-details">Binary search tree:</span> a binary tree that is specifically geared towards serching. A node's <strong>left child</strong> contains only nodes with values <i>less</i> than the parent node, and the <strong>right child</strong> only contains nodes with values <i>greater than or equal</i> to the parent.</li>
+                        <li><span class = "hl-details">Red-Black tree:</span> a self-balancing binary search tree where each node is either red or black, represented by an extra bit of information. These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.</li>
+                    </ul>
+            
+            <div class = "pop-methods">
+                <h2>Popular methods:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Insert:</span> adds a node into the tree</li>
+                        <li><span class = "hl-details">Remove:</span> removes a specified node from the tree</li>
+                        <li><span class = "hl-details">Find min:</span> returns the minimum value in the tree</li>
+                        <li><span class = "hl-details">Find max:</span> returns the maximum value in the tree</li>
+                        <li><span class = "hl-details">Find:</span> finds a specified node in the tree</li>
+                        <li><span class = "hl-details">Make empty:</span> empties out the tree</li>
+                    </ul>
+            </div>
+            
+            <br><br>
+           
+            To give a real life example, let's look at a family tree. If we start with a grandfather, we can traverse down the tree and see that grandpa has two children: a son, and a daughter. That son has his two of his own children, and that daughter also has two of her own children. The reason trees are composed of "subtrees" is because, from grandpa's perspective, he has children and grandchildren. However, from his children's perspective, he isn't grandpa; he's just <i>dad.</i>. Therefore the entire family tree is composed of various parent-child relationships that are independent of each other. Grandpa is just "dad" to dad, and dad is "dad" to his children as well.
+            
+        </div>
+        
+        <div id = "graph">
+            A <a href = "https://en.wikipedia.org/wiki/Graph_(abstract_data_type)" target="_blank" class = "content-links">graph</a> is a collection of elements called <span class = "hl-details">vertexes</span> connected together by <span class = "hl-details">edges</span>. Another name for graphs in everyday terms is a <i>network.</i>
+            
+            <br><br>
+            
+            <img src = "data-structure-images/graph.png" class = "data-structure-image"></img>
+            
+            <br><br>
+            
+            
+            Graphs can (pretty much) either be <span class = "hl-details">undirected</span> or <span class = "hl-details">directed</span>, and <span class = "hl-details">weighted</span> or <span class = "hl-details">unweighted</span>. Therefore there are 4 common combinations of graphs:
+            
+            <br><br>
+            <ol>
+                <li>Undirected unweighted graph</li>
+                <li>Undirected weighted graph</li>
+                <li>Directed unweighted graph</li>
+                <li>Directed weighted graph</li>
+            </ol>
+            
+               In our example, we are going to look at an <span class = "hl-details">undirected, unweighted graph</span> because it's the simplest representation of a graph. 
+            
+              <h2>Basic definitions:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Undirected graph:</span> graphs edges don't have a specific direction. Each vertex can travel to another vertex and back. They are bidirectional. Think a game of catch between three people, where each person is a vertex and the edge is the ball path. Each person can throw to the other in any combination.</li>
+                        <li><span class = "hl-details">Directed graph:</span> graphs where edges have a specific direction. Each node can only travel one way to another node. They are unidirectional. Take the same game of catch between three people, except person 1 can only throw to person 2, person 2 to person 3, and person 3 only back to person 1.</li>
+                        <li><span class = "hl-details">Weighted graph:</span> graphs where edges have specific weights/costs associated with them. In practice, let's say that we have two vertices: New York, and San Francisco. If they are in a weighted graph connected by an edge, that edge may represent the length between the two cities, so it's weight would be 3000 if our units are miles. It may be 6 if our unit is hours flown by airplane.</li>
+                        <li><span class = "hl-details">Unweighted graph:</span> graphs where edges don't have specific weights/costs associated with them. Taking the New York to San Francisco example, the edge would simply represent the fact that there is some sort of route between the two cities without any data on what that route is.</li>
+                    </ul>
+                    
+                <br><br>
+                
+            <div class = "pop-methods">
+                <h2>Popular methods:</h2>
+                    <ul>
+                        <li><span class = "hl-details">Add vertex:</span> adds a vertex to the graph</li>
+                        <li><span class = "hl-details">Remove vertex:</span> removes a vertex from the graph</li>
+                        <li><span class = "hl-details">Add edge:</span> adds an edge to the graph</li>
+                        <li><span class = "hl-details">Remove edge:</span> removes an edge from the graph</li>
+                        <li><span class = "hl-details">Adjacent:</span> checks if two vertices are adjacent</li>
+                    </ul>
+            </div>
+            
+            <br><br>
+            
+            A real life example of a graph, as said, can be any sort of network. A few people playing a game, a social network (like your facebook friends), a map with various routes, etc. Graphs are inherently pretty intuitive once you understand their constiuent components.
+            
         </div>
     
     </body>

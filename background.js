@@ -1,7 +1,5 @@
 // The amount of circles we want to make:
-var count = 100;
-
-// Create a symbol, which we will use to place instances of later:
+var count = 150;
 
 var rectangle = new Rectangle(new Point(7.5, 7.5), new Point(12, 12));
 var cornerSize = new Size(2, 2);

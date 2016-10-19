@@ -1,5 +1,3 @@
-/*general*/
-
 html {
     height: 100%;
 }
@@ -45,15 +43,32 @@ p {
     margin: auto;
 }
 
-#name {
-    color: darkgray;
-    transition: color 0.3s ease-in-out
-
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-#name:hover {
+a:hover {
     text-decoration: none;
     color: lightcoral;
+}
+
+.data-structure-image {
+    width: 100%;
+    height: 100%;
+}
+
+.content-links {
+    border-radius: 2.5px;
+    width: 36px;
+    height: 36px;
+    padding: 2px;
+
+    background: #fff;
+    border: 1px solid #666;
+    color: #666;
+    text-align: center;
 }
 
 
@@ -78,53 +93,14 @@ p {
     padding-top: 20px;
 }
 
+.data-structures, .algorithms {
+    padding-bottom: 30px;
+}
+
 .content-wrapper {
     padding-left: 10px;
     padding-right: 10px;
     color: white;
-}
-
-#quick-facts-title {
-    color: white;
-    opacity: 0.45;
-    font-size: 14px;
-}
-
-table {
-    position: relative;
-    border-collapse: separate;
-    border-spacing: 2.5px;
-    word-wrap: break-word;
-    table-layout: fixed;
-    border-style: hidden;
-}
-
-thead th {
-    background-color: white;
-    color: dimgray;
-    opacity: 0.75;
-    overflow: hidden;
-    text-align: center;
-}
-
-tbody td {
-    background-color: dimgrey;
-    opacity: 0.75;
-    color: white;
-    overflow: hidden;
-    text-align: center;
-}
-
-tr td:first-child,
-tr th:first-child {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
-
-tr td:last-child,
-tr th:last-child {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
 }
 
 pre {
@@ -134,8 +110,13 @@ pre {
 }
 
 #code-desc {
+    color: white;
     opacity: 0.85;
-    color: lightcyan;
+}
+
+.hl-details {
+    color: lightcoral;
+    font-weight: bold;
 }
 
 .quick-facts {
@@ -144,6 +125,10 @@ pre {
 #quick-facts-desc {
     color: lightcyan;
     opacity: 0.5;
+}
+
+ul>li {
+    text-align: left;
 }
 
 /*nav bar customization*/

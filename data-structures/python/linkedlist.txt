@@ -1,21 +1,40 @@
 class LinkedList(object):
 
+    count = 0
+    head = Node()
+    
+    //constructor
     def __init__(self, head=None):
         self.head = head
 
-    def insert(self, data):
+    def add(self, data):
+        new_node = Node(data)
+        new_node.set_next(self.head)
+        self.head = new_node
+    
+    def addAtIndex(self, data):
         new_node = Node(data)
         new_node.set_next(self.head)
         self.head = new_node
 
-    def size(self):
-        current = self.head
-        count = 0
-        while current:
-            count += 1
-            current = current.get_next()
-        return count
-
+	public void addAtIndex(Object data, int index) {
+		Node temp = new Node(data);
+		Node current = head;
+ 
+		if (current != null) {
+            for (int i = 0; i < index && current.getNext() != null; i++) {
+				current = current.getNext();
+			}
+		}
+ 
+		temp.setNext(current.getNext());
+ 		current.setNext(temp);
+ 
+		counter++;
+	}
+    
+    
+    
     def search(self, data):
         current = self.head
         found = False
@@ -44,6 +63,9 @@ class LinkedList(object):
             self.head = current.get_next()
         else:
             previous.set_next(current.get_next())
+            
+    def size(self):
+        return count
             
 class Node(object):
 

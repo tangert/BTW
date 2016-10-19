@@ -19,13 +19,11 @@ public class LinkedList {
 		Node current = head;
  
 		if (current != null) {
- 
 			while (current.getNext() != null) {
 				current = current.getNext();
 			}
- 			
             current.setNext(temp);
-		}
+        }
  
 		// increment the number of elements variable
 		counter++
@@ -48,8 +46,19 @@ public class LinkedList {
 		counter++;
 	}
     
-    //removes an element at a given index
-	public boolean remove(int index) {
+    public boolean remove() {
+
+        Node temp = first;
+
+        while(temp.next.next != null) {
+          temp = temp.next;
+        }
+
+        temp.next = null;
+    
+    }
+    
+	public boolean removeAtIndex(int index) {
  
 		// if the index is out of range, exit
 		if (index < 1 || index > size())
@@ -72,7 +81,6 @@ public class LinkedList {
 		return false;
 	}
  
-    //returns an element at a given index
 	public Object get(int index) {
 		// index must be 1 or higher
 		if (index < 0) return null;
@@ -91,41 +99,36 @@ public class LinkedList {
 		return current;
  
 	}
- 
+    
 	public int size() {
 		return counter;
 	}
- 
-    //Node class
-	private class Node {
-		
-        // reference to the next node in the chain, or null if there isn't one.
-		Node next;
- 
-		// data carried by this node. could be of any type you need.
-		Object data;
- 
-		// Node constructor
-		public Node(Object dataValue) {
-			next = null;
-			data = dataValue;
-		}
- 
- 		public Object getData() {
-			return data;
-		}
- 
-		public void setData(Object dataValue) {
-			data = dataValue;
-		}
- 
-		public Node getNext() {
-			return next;
-		}
- 
-		public void setNext(Node nextValue) {
-			next = nextValue;
-		}
- 
-	}
+}
+
+public class Node {
+
+    Node next;
+    Object data;
+
+    public Node(Object dataValue) {
+        next = null;
+        data = dataValue;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object dataValue) {
+        data = dataValue;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node nextValue) {
+        next = nextValue;
+    }
+
 }

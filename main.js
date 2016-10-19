@@ -15,10 +15,8 @@ $(document).ready(function(){
 
     var languageIsSelected,
         dataStructureIsSelected,
-        algorithmIsSelected = false;
-    
-    //specific stuff for linked list, stack, and queue
-    var linkedlistIsSelected,
+        algorithmIsSelected,
+        linkedlistIsSelected,
         stackIsSelected,
         queueIsSelected = false;
     
@@ -104,27 +102,26 @@ $(document).ready(function(){
         dataStructureIsSelected = false;
 
         
-            if (languageIsSelected && algorithmIsSelected) {
-                $(".content-wrapper").fadeIn();
-            }
+        if (languageIsSelected && algorithmIsSelected) {
+            $(".content-wrapper").fadeIn();
+        }
 
-            var algorithm = this.id;
-                
-            updateCodeContent(algorithm, currentLanguage, "algorithm");
+        var algorithm = this.id;
+        updateCodeContent(algorithm, currentLanguage, "algorithm");
     });
     
-    function updateCodeContent(sender, language, DSorAlg) {
+    function updateCodeContent(sender, language, category) {
 
         var codeURL;
         
-        if (DSorAlg == "data-structure") {
+        if (category == "data-structure") {
             
             codeURL = "data-structures/" + language + "/" + sender + ".txt";
             var descriptionPath = "descriptions/data-structure-descriptions.html " + "#";
             $("#code-desc").load(descriptionPath + sender).hide().fadeIn(); 
             currentDataStructure = sender; 
             
-        } else if (DSorAlg == "algorithm") {
+        } else if (category == "algorithm") {
             
             codeURL = "algorithms/" + language + "/" + sender + ".txt";
             var descriptionPath = "descriptions/algorithm-descriptions.html " + "#";

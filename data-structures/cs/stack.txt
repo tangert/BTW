@@ -1,5 +1,5 @@
-public class Stack<T>: IStack<T>
-{
+public class Stack<T>: IStack<T> {
+    
     private T[] s;
     private int currentStackIndex;
 
