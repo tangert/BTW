@@ -36,12 +36,12 @@ $(document).ready(function(){
                 
         if ($(this).prop('checked') == true) {
             
-            $(title).html("Beat the Whiteboard").hide().fadeIn();
+            $(title).html("Whiteboard").hide().fadeIn();
             $(pageStyle).attr("href", "css/light-styles.css").hide().fadeIn();
             $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-light.css").hide().fadeIn();
         
         } else {
-            $(title).html("Beat the Chalkboard").hide().fadeIn();
+            $(title).html("Chalkboard").hide().fadeIn();
             $(pageStyle).attr("href", "css/dark-styles.css").hide().fadeIn(); 
             $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-dark.css").hide().fadeIn();
 
