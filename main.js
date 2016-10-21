@@ -30,17 +30,21 @@ $(document).ready(function(){
     
     $('#dl-toggle').change(function() {
         
-        var style = document.getElementById("style");
+        var pageStyle = document.getElementById("pageStyle");
+        var codeStyle = document.getElementById("codeStyle")
         var title = document.getElementById("site-name");
                 
         if ($(this).prop('checked') == true) {
             
             $(title).html("Beat the Whiteboard").hide().fadeIn();
-            $(style).attr("href", "css/light-styles.css").hide().fadeIn(); 
+            $(pageStyle).attr("href", "css/light-styles.css").hide().fadeIn();
+            $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-light.css").hide().fadeIn();
         
         } else {
             $(title).html("Beat the Chalkboard").hide().fadeIn();
-            $(style).attr("href", "css/dark-styles.css").hide().fadeIn(); 
+            $(pageStyle).attr("href", "css/dark-styles.css").hide().fadeIn(); 
+            $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-dark.css").hide().fadeIn();
+
             
         }
     });
