@@ -48,16 +48,18 @@ a {
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
-
+s
 a:hover {
     text-decoration: none;
     color: lightcoral;
 }
 
 .data-structure-image {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
 }
+
+
 
 .content-links {
     border-radius: 2.5px;

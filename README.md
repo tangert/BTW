@@ -1,4 +1,4 @@
-# BB4
+# BTW
 
 This is a website I made to both help prepare for technical interviews, and to help OTHERS prep for interviews. It's appropriately dubbed "Beat the Big 4."
 
@@ -11,6 +11,6 @@ Technologies used in particular:
  
 Everythign else is vanilla JS and HTML/CSS.
 
-Enjoy and visit tangert.github.io/BB4 to see it in action!
+Enjoy and visit tangert.github.io/BTW to see it in action!
 
 Fork and contribute pls!
