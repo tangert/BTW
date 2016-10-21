@@ -28,15 +28,33 @@ $(document).ready(function(){
         $("myCanvas").width = window.width();
     });
     
+    $('#dl-toggle').change(function() {
+        
+        var style = document.getElementById("style");
+                
+        if ($(this).prop('checked') == true) {
+            
+            $(style).attr("href", "css/light-styles.css").hide().fadeIn(); 
+        
+        } else {
+            
+            $(style).attr("href", "css/dark-styles.css").hide().fadeIn(); 
+            
+        }
+    });
+    
     //functions
-    $("#dataStructuresBtn").click(function(){
+    $("#dataStructuresBtn").click(function(e){
+        
         
         if(languageIsSelected) {
+            e.preventDefault();
             $(".data-structures").fadeIn();
             $(".algorithms").hide();
         }
         
         if(algorithmIsSelected) {
+            e.preventDefault();
             dataStructureIsSelected = true;
             algorithmIsSelected = false;
             
@@ -46,14 +64,16 @@ $(document).ready(function(){
 
     });
     
-    $("#algorithmsBtn").click(function(){
+    $("#algorithmsBtn").click(function(e){
         
         if(languageIsSelected) {
+            e.preventDefault();
             $(".algorithms").fadeIn();
             $(".data-structures").hide();
         }
         
         if(dataStructureIsSelected) {
+            e.preventDefault();
             algorithmIsSelected = true;
             dataStructureIsSelected = false;
             
@@ -63,7 +83,7 @@ $(document).ready(function(){
     });
     
     
-    $("#languages li a").click(function(){
+    $("#languages li a").click(function(e){
   
         languageIsSelected = true; 
         currentLanguage = this.id;
@@ -71,21 +91,24 @@ $(document).ready(function(){
         $(".selection-content").fadeIn(); 
             
         if (dataStructureIsSelected) {
+            e.preventDefault();
             $("#" + currentDataStructure).trigger("click");
         }
         
         if (algorithmIsSelected) {
+            e.preventDefault();
             $("#" + currentAlgorithm).trigger("click");
         }
     });
     
         
-    $(".data-structures li a").click(function(){        
+    $(".data-structures li a").click(function(e){        
 
         dataStructureIsSelected = true;
         algorithmIsSelected = false;
 
         if (languageIsSelected && dataStructureIsSelected) {
+            e.preventDefault();
             $(".content-wrapper").fadeIn();
 
         }
@@ -96,13 +119,14 @@ $(document).ready(function(){
     });
     
     
-    $(".algorithms li a").click(function(){
+    $(".algorithms li a").click(function(e){
         
         algorithmIsSelected = true;
         dataStructureIsSelected = false;
 
         
         if (languageIsSelected && algorithmIsSelected) {
+            e.preventDefault();
             $(".content-wrapper").fadeIn();
         }
 
