@@ -31,13 +31,15 @@ $(document).ready(function(){
     $('#dl-toggle').change(function() {
         
         var style = document.getElementById("style");
+        var title = document.getElementById("site-name");
                 
         if ($(this).prop('checked') == true) {
             
+            $(title).html("Beat the Whiteboard").hide().fadeIn();
             $(style).attr("href", "css/light-styles.css").hide().fadeIn(); 
         
         } else {
-            
+            $(title).html("Beat the Chalkboard").hide().fadeIn();
             $(style).attr("href", "css/dark-styles.css").hide().fadeIn(); 
             
         }
