@@ -38,12 +38,12 @@ $(document).ready(function(){
             
             $(title).html("Whiteboard").hide().fadeIn();
             $(pageStyle).attr("href", "css/light-styles.css").hide().fadeIn();
-            $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-light.css").hide().fadeIn();
+            $(codeStyle).attr("href", "libraries/highlightjs/styles/atelier-estuary-light.css").hide().fadeIn();
         
         } else {
             $(title).html("Chalkboard").hide().fadeIn();
             $(pageStyle).attr("href", "css/dark-styles.css").hide().fadeIn(); 
-            $(codeStyle).attr("href", "libraries/highlightjs/styles/solarized-dark.css").hide().fadeIn();
+            $(codeStyle).attr("href", "libraries/highlightjs/styles/atelier-estuary-dark.css").hide().fadeIn();
 
             
         }
