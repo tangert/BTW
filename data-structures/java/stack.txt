@@ -1,24 +1,27 @@
-//We will use a linkedlist to implement the stack.
+//Using a LinkedList.
 
 public class Stack {
     
     //Stack constructor
     public Stack(){
-        list = new LinkedList();
+        LinkedList stack = new LinkedList();
     }
     
-    public void push(Object item){
-        list.add(item);
+    public void push(int data){
+        stack.addToHead(item);
     }
     
-    public Object pop() {
-        Object item = list.get(list.size());
-        list.remove(list.size());
-        return item;
+    public Node pop() {
+        if (stack.isEmpty()) {
+            return;
+        }
+        
+        Node removedNode = stack.get(list.size());
+        stack.removeFromHead(removedNode);
+		return removedNode;
     }
     
-    public Object peek() {
+    public Node peek() {
         return list.get(list.size());
     }
-    
 }

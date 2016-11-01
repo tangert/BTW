@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     background-color: white;
     font-family: 'Ubuntu Mono', monospace;
@@ -73,6 +74,25 @@ a:hover {
     text-align: center;
 }
 
+#desc-button {
+    margin-bottom: 10px;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: darkgray;
+
+    border-spacing: inherit;
+    border-width: 1px;
+    border-color: darkgray;
+    border-style: solid;
+    border-radius: 20px;
+    
+    transition: color 0.3s ease-in-out;
+    transition: background-color 0.3s linear;
+    transition: border-radius 0.3s ease-in-out;
+}
+
+
 
 /* middle part of the page*/
 
@@ -111,17 +131,47 @@ a:hover {
 }
 
 pre {
-    background-color: white;
+    background-color: rgb(244, 243,236);
     border-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     white-space: nowrap;
 }
 
+code {
+    border-radius: 15px;
+}
 
 #code-desc {
     color: darkgray;
     opacity: 0.85;
     margin-left: -10px;
+}
+
+#table-wrapper {
+    align-content: center;
+}
+table {    
+    border-collapse:separate;
+    border:solid darkgray 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    margin-bottom: 20px;
+    
+}
+
+td, th {
+    justify-content: center;
+    padding: 5px;
+    border-left: dotted darkgray 1px;
+    border-top:dotted darkgray 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
 }
 
 .hl-details {

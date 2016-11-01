@@ -1,11 +1,9 @@
-using System;
- 
 public class LinkedList {
  
-        public class Node {
-            public object NodeContent;
-            public Node Next;
-        }
+    public class Node {
+        public object NodeContent;
+        public Node Next;
+    }
 
         private int size;
         public int Count {

@@ -1,93 +1,64 @@
-public class Tree {
-
-    private final static int ROOT = 0;
-
-    private HashMap<String, Node> nodes;
-    private TraversalStrategy traversalStrategy;
-
-    // Constructors
-    public Tree() {
-        this(TraversalStrategy.DEPTH_FIRST);
-    }
-
-    public Tree(TraversalStrategy traversalStrategy) {
-        this.nodes = new HashMap<String, Node>();
-        this.traversalStrategy = traversalStrategy;
-    }
-
-    // Properties
-    public HashMap<String, Node> getNodes() {
-        return nodes;
-    }
-
-    public TraversalStrategy getTraversalStrategy() {
-        return traversalStrategy;
-    }
-
-    public void setTraversalStrategy(TraversalStrategy traversalStrategy) {
-        this.traversalStrategy = traversalStrategy;
-    }
-
-    // Public interface
-    public Node addNode(String identifier) {
-        return this.addNode(identifier, null);
-    }
-
-    public Node addNode(String identifier, String parent) {
-        Node node = new Node(identifier);
-        nodes.put(identifier, node);
-
-        if (parent != null) {
-            nodes.get(parent).addChild(identifier);
-        }
-
-        return node;
-    }
-
-    public void display(String identifier) {
-        this.display(identifier, ROOT);
-    }
-
-    public void display(String identifier, int depth) {
-        ArrayList<String> children = nodes.get(identifier).getChildren();
-
-        if (depth == ROOT) {
-            System.out.println(nodes.get(identifier).getIdentifier());
-        } else {
-            String tabs = String.format("%0" + depth + "d", 0).replace("0", "    "); // 4 spaces
-            System.out.println(tabs + nodes.get(identifier).getIdentifier());
-        }
-        depth++;
-        for (String child : children) {
-
-            // Recursive call
-            this.display(child, depth);
+public class BinarySearchTree {
+    
+    class Node {
+        int data;
+        Node left;
+        Node right;
+        
+        public Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
         }
     }
-}
-
-public class Node {
-
-    private String identifier;
-    private ArrayList<String> children;
-
-    // Constructor
-    public Node(String identifier) {
-        this.identifier = identifier;
-        children = new ArrayList<String>();
+    
+    private Node root;
+    
+    public Node get(int data) {
+        
+        if (root == null) {
+            return; //nothing found
+        }
+        
+        Node current = root;
+        
+        while(current != null && data != current.data) {
+            
+            if(data < current.data ? current = current.left : current = current.right);
+            
+        }
+        
+        return current;        
     }
-
-    // Properties
-    public String getIdentifier() {
-        return identifier;
+                
+    
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        Node current = root;
+        
+        if (root == null) {
+            root = newNode;
+            return;
+        }
+        
+        while(current != null) {
+            if (newNode.data < current.data) ? current = current.left : current = current.right;
+        }
+        
+        current = newNode;
+    
     }
-
-    public ArrayList<String> getChildren() {
-        return children;
+    
+    public Node remove(int data) {
+    
     }
-
-    // Public interface
-    public void addChild(String identifier) {
-        children.add(identifier);
+    
+    public Node findMin() {
+    
     }
+    
+    public Node findMax() {
+    
+    }
+    
 }

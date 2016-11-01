@@ -21,12 +21,7 @@
         <link href="https://fonts.googleapis.com/css?family=Dosis|Droid+Sans+Mono|Ubuntu+Mono" rel="stylesheet">
 
     <!--Highlight.js-->
-        <div id = "hljs-css">
-<!--             <link rel="stylesheet" href="libraries/highlightjs/styles/school-book.css">-->
-            <link rel="stylesheet" href="libraries/highlightjs/styles/atelier-estuary-light.css" id = "codeStyle">
-            
-        </div>
-      
+        <link rel="stylesheet" href="libraries/highlightjs/styles/atelier-estuary-light.css" id = "codeStyle">         
         <script src="libraries/highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         
@@ -36,7 +31,6 @@
                
     <!--Standard links-->
         <script src="main.js"></script>
-        
         <link rel ="stylesheet" href = "css/light-styles.css" id = "pageStyle"></link>
         
     </head>
@@ -53,7 +47,7 @@
                 <h1>Beat the <span id = "site-name">Whiteboard</span></h1>
 
 
-                  <p>An interactive glossary of tech interview topics across several languages.</p>
+                  <p>Data structure & algorithm implementations across several languages.</p>
                    <p id="madeBy">Made with lots of facepalming & googling by <a href = "https://www.tylerangert.com" id="name" target="_blank">Tyler Angert</a>
                    </p>
                    
@@ -107,7 +101,6 @@
                   <li><a href="#" data-toggle="pill", id= "queue">Queue</a></li>
                   <li><a href="#" data-toggle="pill", id= "tree">Tree</a></li>
                   <li><a href="#" data-toggle="pill", id= "graph">Graph</a></li>
-<!--                  <li><a href="#" data-toggle="pill", id= "dictionary">Dictionary</a></li>-->
                  </ul>
              </div>
 
@@ -152,10 +145,43 @@
 
                 <div class = "col-sm-4 col-sm-push-8" id = "code-details">
                      
-                     <div id = "code-images">
-<!--                          <p>Real life images</p>-->
-                      </div>
-                                            
+<!--
+                     <div id = "table-wrapper">
+                     <table>
+                        <tr>
+                            <th></th>
+                            <th>Access</th>
+                            <th>Search</th>
+                            <th>Insertion</th>
+                            <th>Deletion</th>
+
+                        </tr>
+                        
+                        <tr class = "text-center">
+                            <th style="color:lightgreen">Avg.</th>
+                            <div id = "avg-content">
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                            </div>
+                        </tr>
+                        
+                        <tr class = "text-center" id = "worst-content">
+                            <th style = "color:red">Worst</th>
+                            <div id = "avg-content">
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                                <td>O(1)</td>
+                            </div>
+                        </tr>
+
+                    </table>
+                    </div>
+-->
+                    
+<!--                     <button type="button" class="btn" id = "desc-button">Show description</button>-->
                       <p id = "code-desc">Description of code.</p>
                       
                    </div>

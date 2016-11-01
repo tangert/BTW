@@ -75,6 +75,14 @@ a:hover {
 
 /* middle part of the page*/
 
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  #desc-button { display: inline-block; }  /* show it on small screens */
+}
+
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  #desc-button { display: none; }   /* hide it elsewhere */
+}
+
 .btn {
     border-radius: 30px;
 }
@@ -110,9 +118,9 @@ a:hover {
 }
 
 pre {
-    background-color: #2e2e2e;
+    background-color: rgb(34,34,27);
     border-color: #2e2e2e;
-    border-radius: 10px;
+    border-radius: 15px;
     white-space: nowrap;
 }
 
@@ -122,6 +130,29 @@ pre {
     opacity: 0.85;
     margin-left: -10px;
 }
+
+table {    
+    border-collapse:separate;
+    border:solid white 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    margin-bottom: 20px;
+}
+
+td, th {
+    padding: 5px;
+    border-left: dotted white 1px;
+    border-top:dotted white 1px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+
 
 .hl-details {
     color: lightcoral;

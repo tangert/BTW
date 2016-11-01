@@ -1,13 +1,26 @@
 class LinkedList(object):
+        
+    class Node(object):
+        data = 0
+        next = None
+        
+        def __init__(self, data=None, next_node=None):
+            self.data = data
 
-    count = 0
+            
     head = Node()
-    
+    count = 0
+        
     //constructor
-    def __init__(self, head=None):
-        self.head = head
+    def __init__(self):
+        self.head = None
 
-    def add(self, data):
+    def addToHead(self, data):
+        new_node = Node(data)
+        new_node.set_next(self.head)
+        self.head = new_node
+    
+    def addToTail(self, data):
         new_node = Node(data)
         new_node.set_next(self.head)
         self.head = new_node
@@ -33,19 +46,6 @@ class LinkedList(object):
 		counter++;
 	}
     
-    
-    
-    def search(self, data):
-        current = self.head
-        found = False
-        while current and found is False:
-            if current.get_data() == data:
-                found = True
-            else:
-                current = current.get_next()
-        if current is None:
-            raise ValueError("Data not in list")
-        return current
 
     def delete(self, data):
         current = self.head
@@ -64,21 +64,19 @@ class LinkedList(object):
         else:
             previous.set_next(current.get_next())
             
+        
+    def get(self, data):
+        current = self.head
+        found = False
+        while current and found is False:
+            if current.get_data() == data:
+                found = True
+            else:
+                current = current.get_next()
+        if current is None:
+            raise ValueError("Data not in list")
+        return current
+            
     def size(self):
         return count
-            
-class Node(object):
-
-    def __init__(self, data=None, next_node=None):
-        self.data = data
-        self.next_node = next_node
-
-    def get_data(self):
-        return self.data
-
-    def get_next(self):
-        return self.next_node
-
-    def set_next(self, new_next):
-        self.next_node = new_next
 

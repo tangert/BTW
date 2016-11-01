@@ -1,23 +1,28 @@
-//We will use a linkedlist to implement the queue.
+//Using a LinkedList.
 
 public class Queue {
 	
-	//Queue constructor
+	//constructor
 	public Queue() {
-		list = new LinkedList();
+		LinkedList queue = new LinkedList();
 	}
 
-	public void enqueue(Object item) {
-		list.add(item);
+	public void enqueue(int data) {	
+        queue.addToTail(data);
 	}
     
-    public Object dequeue() {
-		Object item = list.get(1);
-		list.remove(1);
-		return item;
+    public Node dequeue() {
+        if (queue.isEmpty()) {
+            return;
+        }
+        
+        Node removedNode = queue.get(1);
+        queue.removeFromHead(removedNode);
+		return removedNode;
 	}
 
 	public Object peek() {
-		return list.get(1);
+		return queue.get(1);
 	}
 }
+

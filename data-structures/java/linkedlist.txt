@@ -1,134 +1,150 @@
 public class LinkedList {
  
-	private static int counter;
-	private Node head;
- 
-    //default constructor
+    class Node { 
+        int data;
+        Node next;
+        
+        public Node(int data) {
+            this.data = data;
+        }
+    }
+    
+    private Node head;
+    private static int counter;
+
+    //constructor
 	public LinkedList() {
-        first = null;
+        self.head = null;
+	}
+     
+	// adds an element to the end of this list
+    public void addToHead(int data) {
+        Node newNode = new Node(data);
+
+		if (head == null) {
+			head = newNode;
+		}
+        
+		if (head != null) {
+            
+            newNode.next = head;
+            head = newNode;
+        }
+            
+ 		counter++
 	}
  
-	// adds an element to the end of this list
-	public void add(Object data) {
- 
+
+    public void addToTail(Object data) {
+        Node newNode = new Node();
+
 		if (head == null) {
-			head = new Node(data);
+			head = newNode;
 		}
  
-		Node temp = new Node(data);
 		Node current = head;
  
 		if (current != null) {
-			while (current.getNext() != null) {
-				current = current.getNext();
+			while (current.next != null) {
+				current = current.next;
 			}
-            current.setNext(temp);
+            current.next = newNode;
         }
- 
-		// increment the number of elements variable
-		counter++
+        
+ 		counter++
 	}
  
     //adds an element to a specified index
-	public void addAtIndex(Object data, int index) {
-		Node temp = new Node(data);
+    
+    public void addAtIndex(int data, int index) {
+        Node newNode = new Node();
 		Node current = head;
+        
+        newNode.data = data;
  
 		if (current != null) {
-            for (int i = 0; i < index && current.getNext() != null; i++) {
-				current = current.getNext();
+            for (int i = 0; i < index; i++) {
+				current = current.next;
 			}
 		}
  
-		temp.setNext(current.getNext());
- 		current.setNext(temp);
+		newNode.next = current.next;
+ 		current.next = newNode;
  
 		counter++;
 	}
     
-    public boolean remove() {
+    public void removeAtHead() {        
+        if (size() < 1) {
+            return NoSuchElementException();
+        }
+        
+        Node current = head;
+        head = head.next;
+        current = null;
+        
+        counter--;
+    
+    }
+    
+     public void removeAtTail() {
+        if (size() < 1) {
+            return NoSuchElementException();
+        }
+         
+        Node current = head;
 
-        Node temp = first;
-
-        while(temp.next.next != null) {
-          temp = temp.next;
+        while(current.next.next != null) {
+          current = current.next;
         }
 
-        temp.next = null;
+        current.next = null;
+         
+        counter--;
     
     }
     
-	public boolean removeAtIndex(int index) {
- 
-		// if the index is out of range, exit
-		if (index < 1 || index > size())
-			return false;
- 
-		Node current = head;
-		if (head != null) {
-			for (int i = 0; i < index; i++) {
-				if (current.getNext() == null)
-					return false;
- 
-				current = current.getNext();
-			}
-			current.setNext(current.getNext().getNext());
- 
-			counter--;
-			return true;
- 
-		}
-		return false;
-	}
- 
-	public Object get(int index) {
-		// index must be 1 or higher
-		if (index < 0) return null;
-		Node current = null;
-		
+    public void removeAtIndex(int index) {
+        if (index < 1 || index > size()) {
+            return NoSuchElementException();
+        }
+
+        Node current = head;
+
         if (head != null) {
-			current = head.getNext();
-			for (int i = 0; i < index; i++) {
-				if (current.getNext() == null)
-					return null;
- 
-				current = current.getNext();
-			}
-			return current.getData();
-		}
-		return current;
- 
-	}
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+
+            current.next = current.next.next;
+            counter--;
+        }
+
+    }
+
+    public Node get(int index) {
+        if (index < 0) return null;
+        Node current = null;
+
+        if (head != null) {
+            current = head.getNext();
+            for (int i = 0; i < index; i++) {
+                if (current.next == null) {
+                    return null;
+                }
+                current = current.next;
+            }
+        }
+
+        return current;
+
+    }
     
-	public int size() {
-		return counter;
-	}
-}
-
-public class Node {
-
-    Node next;
-    Object data;
-
-    public Node(Object dataValue) {
-        next = null;
-        data = dataValue;
+    public boolean isEmpty() {
+        return size() == 0;
     }
 
-    public Object getData() {
-        return data;
+    public int size() {
+        return counter;
     }
-
-    public void setData(Object dataValue) {
-        data = dataValue;
-    }
-
-    public Node getNext() {
-        return next;
-    }
-
-    public void setNext(Node nextValue) {
-        next = nextValue;
-    }
-
 }

@@ -16,9 +16,7 @@ $(document).ready(function(){
     var languageIsSelected,
         dataStructureIsSelected,
         algorithmIsSelected,
-        linkedlistIsSelected,
-        stackIsSelected,
-        queueIsSelected = false;
+        descIsSelected = false;
     
     //initial window stuff
     var canvas = document.getElementById("myCanvas");
@@ -47,6 +45,24 @@ $(document).ready(function(){
 
             
         }
+    });
+    
+    $("#desc-button").click(function(e){
+        
+       e.preventDefault();
+                
+        if (descIsSelected) {
+            
+            $("#code-desc").fadeIn();
+            descIsSelected = false;
+            
+        } else {
+            
+            $("#code-desc").fadeOut();
+            descIsSelected = true;
+            
+        } 
+        
     });
     
     //functions
