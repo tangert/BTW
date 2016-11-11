@@ -1,9 +1,31 @@
-public class UndirectedGraph { 
-
-    class Node {
-    }
-    
-    
-
+public class UnweightedGraph {
+     
+      private boolean adjacencyMatrix[][];
+      private int vCount;
+ 
+      public Graph(int vCount) {
+            this.vCount = vCount;
+            adjacencyMatrix = new boolean[vCount][vCount];
+      }
+ 
+      public void addEdge(int i, int j) {
+            if (i >= 0 && i <vCount && j > 0 && j < vertexCount) {
+                  adjacencyMatrix[i][j] = true;
+                  adjacencyMatrix[j][i] = true;
+            }
+      }
+ 
+      public void removeEdge(int i, int j) {
+            if (i >= 0 && i < vCount && j > 0 && j < vCount) {
+                  adjacencyMatrix[i][j] = false;
+                  adjacencyMatrix[j][i] = false;
+            }
+      }
+ 
+      public boolean isEdge(int i, int j) {
+            if (i >= 0 && i < vCount && j > 0 && j < vCount)
+                  return adjacencyMatrix[i][j];
+            else
+                  return false;
+      }
 }
-

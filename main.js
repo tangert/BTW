@@ -39,7 +39,7 @@ $(document).ready(function(){
             $(codeStyle).attr("href", "libraries/highlightjs/styles/atelier-estuary-light.css").hide().fadeIn();
         
         } else {
-            $(title).html("Chalkboard").hide().fadeIn();
+            $(title).html("Blackboard").hide().fadeIn();
             $(pageStyle).attr("href", "css/dark-styles.css").hide().fadeIn(); 
             $(codeStyle).attr("href", "libraries/highlightjs/styles/atelier-estuary-dark.css").hide().fadeIn();
 

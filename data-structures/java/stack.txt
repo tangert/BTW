@@ -17,6 +17,7 @@ public class Stack {
         }
         
         Node removedNode = stack.get(list.size());
+        
         stack.removeFromHead(removedNode);
 		return removedNode;
     }
