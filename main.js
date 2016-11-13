@@ -42,15 +42,15 @@ $(document).ready(function(){
         }
     });
     
-    $(window).scroll(function() {
-        var distanceFromTop = $(document).scrollTop();
-        
-        if (distanceFromTop >= $('#top-wrapper').height() * 1.5) {
-            $('#top-wrapper').addClass('fixed');
-        } else {
-            $('#top-wrapper').removeClass('fixed');
-        }
-    });
+//    $(window).scroll(function() {
+//        var distanceFromTop = $(document).scrollTop();
+//        
+//        if (distanceFromTop >= $('#top-wrapper').height() * 1.5) {
+//            $('#top-wrapper').addClass('fixed');
+//        } else {
+//            $('#top-wrapper').removeClass('fixed');
+//        }
+//    });
     
     $("#desc-button").click(function(e){
         
