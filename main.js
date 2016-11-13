@@ -1,7 +1,7 @@
 $(function(){
     $(".data-structures").hide();
     $(".algorithms").hide();
-    $(".content-wrapper").hide();
+    $("#content-wrapper").hide();
     $(".selection-content").hide();
     
 });
@@ -21,11 +21,6 @@ $(document).ready(function(){
     //initial window stuff
     var canvas = document.getElementById("myCanvas");
     
-    $(window).on('resize', function() {
-        $("myCanvas").height = window.height();
-        $("myCanvas").width = window.width();
-    });
-    
     $('#dl-toggle').change(function() {
         
         var pageStyle = document.getElementById("pageStyle");
@@ -44,6 +39,16 @@ $(document).ready(function(){
             $(codeStyle).attr("href", "libraries/highlightjs/styles/atelier-estuary-dark.css").hide().fadeIn();
 
             
+        }
+    });
+    
+    $(window).scroll(function() {
+        var distanceFromTop = $(document).scrollTop();
+        
+        if (distanceFromTop >= $('#top-wrapper').height() * 1.5) {
+            $('#top-wrapper').addClass('fixed');
+        } else {
+            $('#top-wrapper').removeClass('fixed');
         }
     });
     
@@ -68,7 +73,8 @@ $(document).ready(function(){
     //functions
     $("#dataStructuresBtn").click(function(e){
         
-        
+        e.preventDefault();
+    
         if(languageIsSelected) {
             e.preventDefault();
             $(".data-structures").fadeIn();
@@ -87,6 +93,8 @@ $(document).ready(function(){
     });
     
     $("#algorithmsBtn").click(function(e){
+        
+        e.preventDefault();
         
         if(languageIsSelected) {
             e.preventDefault();
@@ -107,6 +115,8 @@ $(document).ready(function(){
     
     $("#languages li a").click(function(e){
   
+        e.preventDefault();
+        
         languageIsSelected = true; 
         currentLanguage = this.id;
 
@@ -126,12 +136,14 @@ $(document).ready(function(){
         
     $(".data-structures li a").click(function(e){        
 
+        e.preventDefault();
+
         dataStructureIsSelected = true;
         algorithmIsSelected = false;
 
         if (languageIsSelected && dataStructureIsSelected) {
             e.preventDefault();
-            $(".content-wrapper").fadeIn();
+            $("#content-wrapper").fadeIn();
 
         }
         
@@ -143,13 +155,15 @@ $(document).ready(function(){
     
     $(".algorithms li a").click(function(e){
         
+        e.preventDefault();
+
         algorithmIsSelected = true;
         dataStructureIsSelected = false;
 
         
         if (languageIsSelected && algorithmIsSelected) {
             e.preventDefault();
-            $(".content-wrapper").fadeIn();
+            $("#content-wrapper").fadeIn();
         }
 
         var algorithm = this.id;

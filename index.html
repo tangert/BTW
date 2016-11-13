@@ -59,10 +59,8 @@
 
                  </div>
            
-           
+        <div id = "top-wrapper">   
             <div class = "languages text-center">
-
-                <p id = "languages-label">Choose a language</p>
 
                 <div id = languages>
                     <ul class="nav nav-pills">
@@ -93,8 +91,6 @@
         <!--SELECT SPECIFIC DATA STRUCTURE.-->
              <div class = "data-structures text-center">
 
-                <p id = "data-structures-label">Choose a data structure</p>
-
                 <ul class="nav nav-pills">
                   <li><a href="#" data-toggle="pill", id= "linkedlist">LinkedList</a></li>
                   <li><a href="#" data-toggle="pill", id= "stack">Stack</a></li>
@@ -108,9 +104,6 @@
         <!--SELECT SPECIFIC ALGORITHM.-->
             <div class = "algorithms text-center">
 
-            <p id = "algorithms-label">Choose an algorithm</p>
-
-                    <!--nest in columns here to have proper searching/sorting separation-->
             <div class="row">
                 <div class="col-md-12" id="wrapper">
                     <ul class="nav nav-pills">
@@ -126,7 +119,6 @@
 
                    <h5 class = "text-center" id = "sorting-label">Sorting</h5>
                     <!--Sorting-->
-<!--                      <li><a href="#" data-toggle="pill", id= "heap-sort">Heap</a></li>-->
                       <li><a href="#" data-toggle="pill", id= "insertion-sort">Insertion</a></li>
                       <li><a href="#" data-toggle="pill", id= "merge-sort">Merge</a></li>
                       <li><a href="#" data-toggle="pill", id= "quick-sort">Quick</a></li>
@@ -137,55 +129,17 @@
                     </div>
                 </div>
             </div>
+        </div>
 
         <!--CODE DISPLAY.-->
-             <div class = "content-wrapper">
+             <div id = "content-wrapper">
 
                <div class = "row">
 
                 <div class = "col-sm-4 col-sm-push-8" id = "code-details">
-                     
-<!--
-                     <div id = "table-wrapper">
-                     <table>
-                        <tr>
-                            <th></th>
-                            <th>Access</th>
-                            <th>Search</th>
-                            <th>Insertion</th>
-                            <th>Deletion</th>
-
-                        </tr>
-                        
-                        <tr class = "text-center">
-                            <th style="color:lightgreen">Avg.</th>
-                            <div id = "avg-content">
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                            </div>
-                        </tr>
-                        
-                        <tr class = "text-center" id = "worst-content">
-                            <th style = "color:red">Worst</th>
-                            <div id = "avg-content">
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                                <td>O(1)</td>
-                            </div>
-                        </tr>
-
-                    </table>
-                    </div>
--->
-                    
-<!--                     <button type="button" class="btn" id = "desc-button">Show description</button>-->
                       <p id = "code-desc">Description of code.</p>
                       
                    </div>
-                   
                    
                    <div class = "col-sm-8 col-sm-pull-4">
                      <!--Actual code-->
